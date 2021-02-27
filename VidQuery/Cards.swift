@@ -19,13 +19,13 @@ struct FeatureCard: View {
             
             
             Text(title)
-                .font(.system(size: 19, weight: .medium))
-                .padding(EdgeInsets(top: 6, leading: 6, bottom: 12, trailing: 6))
+                .font(.system(size: 17, weight: .regular))
+                .foregroundColor(Color(.secondaryLabelColor))
+                .padding(EdgeInsets(top: 2, leading: 6, bottom: 6, trailing: 6))
             
         }
-        .frame(maxWidth: .infinity)
         .background(
-            Color.white
+            Color(.textBackgroundColor)
         )
         .cornerRadius(8) .shadow(color: Color(#colorLiteral(red: 0.5723067522, green: 0.5723067522, blue: 0.5723067522, alpha: 0.5)), radius: 5, x: 0.0, y: 2)
     }
@@ -44,7 +44,7 @@ struct CategoryCard: View {
         }
         .frame(maxWidth: .infinity)
         .background(
-            Color.white
+            Color(.textBackgroundColor)
         )
         .cornerRadius(8) .shadow(color: Color(#colorLiteral(red: 0.5723067522, green: 0.5723067522, blue: 0.5723067522, alpha: 0.5)), radius: 5, x: 0.0, y: 2)
     }

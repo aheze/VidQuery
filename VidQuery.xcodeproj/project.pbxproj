@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C502BFA25EA062300D61772 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C502BF925EA062300D61772 /* DetailView.swift */; };
 		3C914EEA25E9FBEB00FAB882 /* VidQueryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C914EE925E9FBEB00FAB882 /* VidQueryApp.swift */; };
 		3C914EEC25E9FBEB00FAB882 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C914EEB25E9FBEB00FAB882 /* ContentView.swift */; };
 		3C914EEE25E9FBED00FAB882 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C914EED25E9FBED00FAB882 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C502BF925EA062300D61772 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		3C914EE625E9FBEB00FAB882 /* VidQuery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VidQuery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C914EE925E9FBEB00FAB882 /* VidQueryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VidQueryApp.swift; sourceTree = "<group>"; };
 		3C914EEB25E9FBEB00FAB882 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 				3C914EE925E9FBEB00FAB882 /* VidQueryApp.swift */,
 				3C914EEB25E9FBEB00FAB882 /* ContentView.swift */,
 				3C914EFA25E9FDAE00FAB882 /* Cards.swift */,
+				3C502BF925EA062300D61772 /* DetailView.swift */,
 				3C914EED25E9FBED00FAB882 /* Assets.xcassets */,
 				3C914EF225E9FBED00FAB882 /* Info.plist */,
 				3C914EF325E9FBED00FAB882 /* VidQuery.entitlements */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C914EEC25E9FBEB00FAB882 /* ContentView.swift in Sources */,
+				3C502BFA25EA062300D61772 /* DetailView.swift in Sources */,
 				3C914EFB25E9FDAE00FAB882 /* Cards.swift in Sources */,
 				3C914EEA25E9FBEB00FAB882 /* VidQueryApp.swift in Sources */,
 			);
