@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,8 @@
 		128336D025EAB42200EEAEBE /* TMDB_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336CF25EAB42200EEAEBE /* TMDB_API.swift */; };
 		128336D425EAB67100EEAEBE /* FeaturedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336D325EAB67100EEAEBE /* FeaturedCard.swift */; };
 		128336D725EAB69700EEAEBE /* CategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336D625EAB69700EEAEBE /* CategoryCard.swift */; };
+		128336DE25EAD43400EEAEBE /* TextFieldClearButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336DD25EAD43400EEAEBE /* TextFieldClearButtonModifier.swift */; };
+		128336E525EAD78800EEAEBE /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 128336E425EAD78800EEAEBE /* SwiftyJSON */; };
 		3C502BFA25EA062300D61772 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C502BF925EA062300D61772 /* DetailView.swift */; };
 		3C914EEA25E9FBEB00FAB882 /* VidQueryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C914EE925E9FBEB00FAB882 /* VidQueryApp.swift */; };
 		3C914EEC25E9FBEB00FAB882 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C914EEB25E9FBEB00FAB882 /* ContentView.swift */; };
@@ -25,6 +27,7 @@
 		128336CF25EAB42200EEAEBE /* TMDB_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_API.swift; sourceTree = "<group>"; };
 		128336D325EAB67100EEAEBE /* FeaturedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCard.swift; sourceTree = "<group>"; };
 		128336D625EAB69700EEAEBE /* CategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCard.swift; sourceTree = "<group>"; };
+		128336DD25EAD43400EEAEBE /* TextFieldClearButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButtonModifier.swift; sourceTree = "<group>"; };
 		3C502BF925EA062300D61772 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		3C914EE625E9FBEB00FAB882 /* VidQuery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VidQuery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C914EE925E9FBEB00FAB882 /* VidQueryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VidQueryApp.swift; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				128336E525EAD78800EEAEBE /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +57,15 @@
 				128336D325EAB67100EEAEBE /* FeaturedCard.swift */,
 			);
 			path = Cards;
+			sourceTree = "<group>";
+		};
+		128336E025EAD43700EEAEBE /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				128336DD25EAD43400EEAEBE /* TextFieldClearButtonModifier.swift */,
+				128336C525EAB39200EEAEBE /* ToolbarModifier.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		3C914EDD25E9FBEB00FAB882 = {
@@ -79,8 +92,8 @@
 				3C502BF925EA062300D61772 /* DetailView.swift */,
 				128336CC25EAB3D000EEAEBE /* Containers.swift */,
 				128336CF25EAB42200EEAEBE /* TMDB_API.swift */,
-				128336C525EAB39200EEAEBE /* ToolbarModifier.swift */,
 				128336DA25EAB6B900EEAEBE /* Cards */,
+				128336E025EAD43700EEAEBE /* Modifiers */,
 				3C914EED25E9FBED00FAB882 /* Assets.xcassets */,
 				3C914EF225E9FBED00FAB882 /* Info.plist */,
 				3C914EF325E9FBED00FAB882 /* VidQuery.entitlements */,
@@ -113,6 +126,9 @@
 			dependencies = (
 			);
 			name = VidQuery;
+			packageProductDependencies = (
+				128336E425EAD78800EEAEBE /* SwiftyJSON */,
+			);
 			productName = VidQuery;
 			productReference = 3C914EE625E9FBEB00FAB882 /* VidQuery.app */;
 			productType = "com.apple.product-type.application";
@@ -140,6 +156,9 @@
 				Base,
 			);
 			mainGroup = 3C914EDD25E9FBEB00FAB882;
+			packageReferences = (
+				128336E325EAD78800EEAEBE /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = 3C914EE725E9FBEB00FAB882 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -169,6 +188,7 @@
 				3C914EEC25E9FBEB00FAB882 /* ContentView.swift in Sources */,
 				128336D025EAB42200EEAEBE /* TMDB_API.swift in Sources */,
 				3C502BFA25EA062300D61772 /* DetailView.swift in Sources */,
+				128336DE25EAD43400EEAEBE /* TextFieldClearButtonModifier.swift in Sources */,
 				128336D725EAB69700EEAEBE /* CategoryCard.swift in Sources */,
 				3C914EEA25E9FBEB00FAB882 /* VidQueryApp.swift in Sources */,
 				128336C625EAB39200EEAEBE /* ToolbarModifier.swift in Sources */,
@@ -365,6 +385,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		128336E325EAD78800EEAEBE /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		128336E425EAD78800EEAEBE /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 128336E325EAD78800EEAEBE /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3C914EDE25E9FBEB00FAB882 /* Project object */;
 }

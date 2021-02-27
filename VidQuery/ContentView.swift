@@ -7,6 +7,29 @@
 
 import SwiftUI
 
+let media = [
+    Media(imageName: "sample", title: "Attack on Titan T", releaseYear: 2013, mediaType: .tvShows),
+    Media(imageName: "sample", title: "Attack on Titan M", releaseYear: 2013, mediaType: .movies),
+    Media(imageName: "sample", title: "Attack on Titan M-1", releaseYear: 2013, mediaType: .movies),
+    Media(imageName: "sample", title: "Attack on Titan T-1", releaseYear: 2013, mediaType: .tvShows)
+]
+
+let categories = [
+    Category(name: "Gaming"),
+    Category(name: "Tech"),
+    Category(name: "Cartoons"),
+    Category(name: "Comedy"),
+    Category(name: "Slice of life"),
+    Category(name: "Action"),
+    Category(name: "Gaming"),
+    Category(name: "Tech"),
+    Category(name: "Cartoons"),
+    Category(name: "Comedy"),
+    Category(name: "Slice of life"),
+    Category(name: "Action"),
+    Category(name: "Horror")
+]
+
 struct ContentView: View {
     let columns = [
         GridItem(.adaptive(minimum: 120), spacing: 24)
@@ -14,31 +37,6 @@ struct ContentView: View {
     
     let categoryColumns = [
         GridItem(.adaptive(minimum: 150), spacing: 24)
-    ]
-    
-    var media = [
-        Media(imageName: "sample", title: "Attack on Titan T", releaseYear: 2013, mediaType: .tvShows),
-        Media(imageName: "sample", title: "Attack on Titan M", releaseYear: 2013, mediaType: .movies),
-        Media(imageName: "sample", title: "Attack on Titan A", releaseYear: 2013, mediaType: .anime),
-        Media(imageName: "sample", title: "Attack on Titan M-1", releaseYear: 2013, mediaType: .movies),
-        Media(imageName: "sample", title: "Attack on Titan T-1", releaseYear: 2013, mediaType: .tvShows),
-        Media(imageName: "sample", title: "Attack on Titan A-1", releaseYear: 2013, mediaType: .anime)
-    ]
-    
-    var categories = [
-        Category(name: "Gaming"),
-        Category(name: "Tech"),
-        Category(name: "Cartoons"),
-        Category(name: "Comedy"),
-        Category(name: "Slice of life"),
-        Category(name: "Action"),
-        Category(name: "Gaming"),
-        Category(name: "Tech"),
-        Category(name: "Cartoons"),
-        Category(name: "Comedy"),
-        Category(name: "Slice of life"),
-        Category(name: "Action"),
-        Category(name: "Horror")
     ]
     
     @State var selectedMedia: Media?

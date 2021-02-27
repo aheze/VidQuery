@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ToolbarModifier: ViewModifier {
     @Binding var currentView: MediaType
-    
+    @State var searchField: String = ""
+
     func body(content: Content) -> some View {
         content
             .toolbar {
@@ -21,11 +22,22 @@ struct ToolbarModifier: ViewModifier {
                         Label("TV Shows", systemImage: "tv")
                             .labelStyle(TitleOnlyLabelStyle())
                             .tag(MediaType.tvShows)
-                        Label("Anime", systemImage: "tv.music.note")
-                            .labelStyle(TitleOnlyLabelStyle())
-                            .tag(MediaType.anime)
                     }
                     .pickerStyle(SegmentedPickerStyle())
+                }
+                ToolbarItem {
+                    TextField("Search...", text: $searchField, onCommit: {
+                        print("Searching for \"\(searchField)\"...")
+                        let api = TMDB_API()
+                        api.search(query: searchField, mediaType: currentView) { response in
+                            print(response)
+                        }
+                        print("Completion handler?")
+                    })
+                        .modifier(TextFieldClearButtonModifier(text: $searchField))
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .frame(minWidth: 150)
+                        .padding(.leading, 4)
                 }
             }
     }

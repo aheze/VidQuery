@@ -5,8 +5,8 @@
 //  Created by H. Kamran on 2/27/21.
 //
 
-import Foundation
 import Cocoa
+import Foundation
 
 // MARK: Structures
 
@@ -18,7 +18,7 @@ struct Media: Identifiable {
     let description: String = "A show about titans and people killing them."
     let releaseYear: Int
     let mediaType: MediaType
-    
+
     let seasonCount: Int? = nil
     let episodeCount: Int? = nil
 
@@ -41,10 +41,49 @@ struct Category: Identifiable {
     let name: String
 }
 
+// MARK: TMDB Structures
+
+struct TMDBMovieResult: Identifiable {
+    let id: Int
+
+    let title: String
+    let originalTitle: String
+
+    let overview: String
+
+    let adult: Bool
+    let posterPath: String?
+    let releaseDate: String
+
+    let genreIds: [Int]
+
+    let popularity: Float
+    let voteCount: Int
+    let voteAverage: Float
+}
+
+struct TMDBTVResult: Identifiable {
+    let id: Int
+
+    let name: String
+    let originalName: String
+
+    let overview: String
+
+    let posterPath: String?
+    let firstAirDate: String
+    let originCountry: [String]
+
+    let genreIds: [Int]
+
+    let popularity: Float
+    let voteCount: Int
+    let voteAverage: Float
+}
+
 // MARK: Enums
 
-enum MediaType {
+public enum MediaType {
     case movies
     case tvShows
-    case anime
 }
