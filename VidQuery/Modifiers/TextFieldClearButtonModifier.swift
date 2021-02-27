@@ -15,13 +15,13 @@ struct TextFieldClearButtonModifier: ViewModifier {
             content
 
             if !text.isEmpty {
-                Button(
-                    action: { self.text = "" },
-                    label: {
-                        Image(systemName: "xmark.circle")
-                            .foregroundColor(Color(.separatorColor))
-                    }
-                )
+                Button(action: {
+                    self.text = ""
+                    NSApp.keyWindow?.makeFirstResponder(nil)
+                }) {
+                    Image(systemName: "xmark.circle")
+                        .foregroundColor(Color(.separatorColor))
+                }
             }
         }
     }

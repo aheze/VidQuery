@@ -42,47 +42,57 @@ struct ContentView: View {
     @State var selectedMedia: Media?
     @State var mediaView: MediaType = .movies
     
+    
+    @State var searchFieldText: String = ""
+    @State var searchResults: [MediaType : Any]?
+    
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                HStack {
-                    Text("Featured")
-                        .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
-                        .font(.system(size: 24, weight: .medium))
-                        .padding(EdgeInsets(top: 16, leading: 0, bottom: 6, trailing: 0))
-                }
-                
-                LazyVGrid(columns: columns, alignment: .leading, spacing: 24) {
-                    ForEach(media) { media in
-                        Button(action: {
-                            selectedMedia = media
-                        }) {
-                            FeaturedCard(imageName: "sample", title: media.title)
+        Group {
+            if !searchFieldText.isEmpty {
+                SearchView(searchFieldText: $searchFieldText, searchResults: $searchResults)
+            } else {
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text("Featured")
+                                .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
+                                .font(.system(size: 24, weight: .medium))
+                                .padding(EdgeInsets(top: 16, leading: 0, bottom: 6, trailing: 0))
                         }
-                        .buttonStyle(PlainButtonStyle())
+                        
+                        LazyVGrid(columns: columns, alignment: .leading, spacing: 24) {
+                            ForEach(media) { media in
+                                Button(action: {
+                                    selectedMedia = media
+                                }) {
+                                    FeaturedCard(imageURL: "https://github.com/aheze/DeveloperAssets/blob/master/cactus.png?raw=true", title: media.title)
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                            }
+                        }
+                        
+                        HStack {
+                            Text("Categories")
+                                .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
+                                .font(.system(size: 24, weight: .medium))
+                                .padding(EdgeInsets(top: 16, leading: 0, bottom: 6, trailing: 0))
+                        }
+                        
+                        LazyVGrid(columns: categoryColumns, alignment: .leading, spacing: 24) {
+                            ForEach(categories) { category in
+                                CategoryCard(name: category.name)
+                            }
+                        }
                     }
-                }
-                
-                HStack {
-                    Text("Categories")
-                        .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
-                        .font(.system(size: 24, weight: .medium))
-                        .padding(EdgeInsets(top: 16, leading: 0, bottom: 6, trailing: 0))
-                }
-                
-                LazyVGrid(columns: categoryColumns, alignment: .leading, spacing: 24) {
-                    ForEach(categories) { category in
-                        CategoryCard(name: category.name)
-                    }
+                    .padding(24)
                 }
             }
-            .padding(24)
         }
         .frame(minWidth: 350, maxWidth: .infinity, minHeight: 300, maxHeight: .infinity)
         .sheet(item: $selectedMedia) { media in
             DetailView(media: media, dismissNil: $selectedMedia)
         }
-        .modifier(ToolbarModifier(currentView: $mediaView))
+        .modifier(ToolbarModifier(currentView: $mediaView, searchFieldText: $searchFieldText, searchResults: $searchResults))
     }
 }
 

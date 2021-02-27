@@ -6,17 +6,18 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct FeaturedCard: View {
-    let imageName: String
+    let imageURL: String 
     let title: String
 
     var body: some View {
         VStack {
-            Image(imageName)
+            KFImage.url(URL(string: imageURL))
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-
+            
             Text(title)
                 .font(.system(size: 17, weight: .regular))
                 .foregroundColor(Color(.secondaryLabelColor))
@@ -32,11 +33,3 @@ struct FeaturedCard: View {
        
     }
 }
-
-#if DEBUG
-struct FeaturedCard_Previews: PreviewProvider {
-    static var previews: some View {
-        FeaturedCard(imageName: "sample", title: "Attack on Titan")
-    }
-}
-#endif
