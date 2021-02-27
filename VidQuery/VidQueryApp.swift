@@ -12,6 +12,9 @@ struct VidQueryApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onAppear(perform: {
+                    NSApp.appearance = NSAppearance(named: .aqua)
+                })
         }
     }
 }

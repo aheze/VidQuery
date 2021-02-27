@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct DetailView: View {
-    
-    var media: Media = Media(imageName: "sample", title: "Attack on Titan")
+    let media: Media
     @Binding var dismissNil: Media?
     
     var body: some View {
         VStack {
-            
             HStack {
                 Spacer()
                 
@@ -35,7 +33,6 @@ struct DetailView: View {
                     .cornerRadius(12)
                     .shadow(color: Color(#colorLiteral(red: 0.5723067522, green: 0.5723067522, blue: 0.5723067522, alpha: 0.5)), radius: 5, x: 0.0, y: 2)
                     
-                
                 VStack(alignment: .leading) {
                     Text(media.title)
                         .foregroundColor(Color(.secondaryLabelColor))
@@ -45,7 +42,6 @@ struct DetailView: View {
                     Text(media.description)
                         .foregroundColor(Color(.secondaryLabelColor))
                         .font(.system(size: 19, weight: .regular))
-                    
                 }
                 .padding(.horizontal, 12)
                 
@@ -53,7 +49,7 @@ struct DetailView: View {
             }
             
             HStack {
-                Text("Where to watch")
+                Text("Where to Watch")
                     .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
                     .font(.system(size: 24, weight: .medium))
                     .padding(.top, 16)
@@ -83,7 +79,6 @@ struct DetailView: View {
                         .padding(.bottom, 12)
                     }
                 }
-                
             }
             
             Spacer()
@@ -94,10 +89,11 @@ struct DetailView: View {
 }
 
 #if DEBUG
-//struct DetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DetailView()
-//            .previewLayout(.fixed(width: 600, height: 600))
-//    }
-//}
+ struct DetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        let selectedMedia = Media(imageName: "sample", title: "Attack on Titan", releaseYear: 2013, mediaType: .tvShows)
+        DetailView(media: selectedMedia, dismissNil: .constant(selectedMedia))
+            .previewLayout(.fixed(width: 600, height: 600))
+    }
+ }
 #endif

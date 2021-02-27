@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		128336C625EAB39200EEAEBE /* ToolbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336C525EAB39200EEAEBE /* ToolbarModifier.swift */; };
+		128336CD25EAB3D000EEAEBE /* Containers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336CC25EAB3D000EEAEBE /* Containers.swift */; };
+		128336D025EAB42200EEAEBE /* TMDB_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336CF25EAB42200EEAEBE /* TMDB_API.swift */; };
+		128336D425EAB67100EEAEBE /* FeaturedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336D325EAB67100EEAEBE /* FeaturedCard.swift */; };
+		128336D725EAB69700EEAEBE /* CategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336D625EAB69700EEAEBE /* CategoryCard.swift */; };
 		3C502BFA25EA062300D61772 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C502BF925EA062300D61772 /* DetailView.swift */; };
 		3C914EEA25E9FBEB00FAB882 /* VidQueryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C914EE925E9FBEB00FAB882 /* VidQueryApp.swift */; };
 		3C914EEC25E9FBEB00FAB882 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C914EEB25E9FBEB00FAB882 /* ContentView.swift */; };
 		3C914EEE25E9FBED00FAB882 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C914EED25E9FBED00FAB882 /* Assets.xcassets */; };
 		3C914EF125E9FBED00FAB882 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C914EF025E9FBED00FAB882 /* Preview Assets.xcassets */; };
-		3C914EFB25E9FDAE00FAB882 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C914EFA25E9FDAE00FAB882 /* Cards.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		128336C525EAB39200EEAEBE /* ToolbarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarModifier.swift; sourceTree = "<group>"; };
+		128336CC25EAB3D000EEAEBE /* Containers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Containers.swift; sourceTree = "<group>"; };
+		128336CF25EAB42200EEAEBE /* TMDB_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_API.swift; sourceTree = "<group>"; };
+		128336D325EAB67100EEAEBE /* FeaturedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCard.swift; sourceTree = "<group>"; };
+		128336D625EAB69700EEAEBE /* CategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCard.swift; sourceTree = "<group>"; };
 		3C502BF925EA062300D61772 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		3C914EE625E9FBEB00FAB882 /* VidQuery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VidQuery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C914EE925E9FBEB00FAB882 /* VidQueryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VidQueryApp.swift; sourceTree = "<group>"; };
@@ -24,7 +33,6 @@
 		3C914EF025E9FBED00FAB882 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3C914EF225E9FBED00FAB882 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C914EF325E9FBED00FAB882 /* VidQuery.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VidQuery.entitlements; sourceTree = "<group>"; };
-		3C914EFA25E9FDAE00FAB882 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +46,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		128336DA25EAB6B900EEAEBE /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				128336D625EAB69700EEAEBE /* CategoryCard.swift */,
+				128336D325EAB67100EEAEBE /* FeaturedCard.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
 		3C914EDD25E9FBEB00FAB882 = {
 			isa = PBXGroup;
 			children = (
@@ -59,8 +76,11 @@
 			children = (
 				3C914EE925E9FBEB00FAB882 /* VidQueryApp.swift */,
 				3C914EEB25E9FBEB00FAB882 /* ContentView.swift */,
-				3C914EFA25E9FDAE00FAB882 /* Cards.swift */,
 				3C502BF925EA062300D61772 /* DetailView.swift */,
+				128336CC25EAB3D000EEAEBE /* Containers.swift */,
+				128336CF25EAB42200EEAEBE /* TMDB_API.swift */,
+				128336C525EAB39200EEAEBE /* ToolbarModifier.swift */,
+				128336DA25EAB6B900EEAEBE /* Cards */,
 				3C914EED25E9FBED00FAB882 /* Assets.xcassets */,
 				3C914EF225E9FBED00FAB882 /* Info.plist */,
 				3C914EF325E9FBED00FAB882 /* VidQuery.entitlements */,
@@ -147,9 +167,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C914EEC25E9FBEB00FAB882 /* ContentView.swift in Sources */,
+				128336D025EAB42200EEAEBE /* TMDB_API.swift in Sources */,
 				3C502BFA25EA062300D61772 /* DetailView.swift in Sources */,
-				3C914EFB25E9FDAE00FAB882 /* Cards.swift in Sources */,
+				128336D725EAB69700EEAEBE /* CategoryCard.swift in Sources */,
 				3C914EEA25E9FBEB00FAB882 /* VidQueryApp.swift in Sources */,
+				128336C625EAB39200EEAEBE /* ToolbarModifier.swift in Sources */,
+				128336CD25EAB3D000EEAEBE /* Containers.swift in Sources */,
+				128336D425EAB67100EEAEBE /* FeaturedCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +304,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"VidQuery/Preview Content\"";
-				DEVELOPMENT_TEAM = YA533DMD5J;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = VidQuery/Info.plist;
@@ -304,7 +328,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"VidQuery/Preview Content\"";
-				DEVELOPMENT_TEAM = YA533DMD5J;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = VidQuery/Info.plist;

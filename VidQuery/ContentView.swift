@@ -7,35 +7,7 @@
 
 import SwiftUI
 
-struct Media: Identifiable {
-    let id = UUID()
-    
-    var imageName: String = "sample"
-    let title: String
-    let description: String = "A show about titans and people killing them. Asdlkj sldkfjs dlfjslkdfj dslfjklsdjflds fkldsjfklds flksdjflkjsdf lsdjfl lskdjflksdf lsdjflsdfldssldkf"
-    var providers = [
-        Provider(name: "9anime", color: #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)),
-        Provider(name: "Crunchyroll", color: #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)),
-        Provider(name: "Hulu", color: #colorLiteral(red: 0.1098039216, green: 0.9058823529, blue: 0.5137254902, alpha: 1))
-    ]
-    
-}
-
-struct Provider: Identifiable {
-    let id = UUID()
-    var name = "VRV"
-    var color: NSColor
-    var url = "https://apple.com"
-}
-
-struct Category: Identifiable {
-    let id = UUID()
-    
-    let name: String
-}
-
 struct ContentView: View {
-    
     let columns = [
         GridItem(.adaptive(minimum: 120), spacing: 24)
     ]
@@ -45,13 +17,12 @@ struct ContentView: View {
     ]
     
     var media = [
-        Media(title: "Attack on Titan"),
-        Media(title: "sdfsdfsdf"),
-        Media(title: "sdf"),
-        Media(title: "sdfsdfdfsdf"),
-        Media(title: "sdfsd"),
-        Media(title: "sdf"),
-        Media(title: "sdfsdfsdfsdf")
+        Media(imageName: "sample", title: "Attack on Titan T", releaseYear: 2013, mediaType: .tvShows),
+        Media(imageName: "sample", title: "Attack on Titan M", releaseYear: 2013, mediaType: .movies),
+        Media(imageName: "sample", title: "Attack on Titan A", releaseYear: 2013, mediaType: .anime),
+        Media(imageName: "sample", title: "Attack on Titan M-1", releaseYear: 2013, mediaType: .movies),
+        Media(imageName: "sample", title: "Attack on Titan T-1", releaseYear: 2013, mediaType: .tvShows),
+        Media(imageName: "sample", title: "Attack on Titan A-1", releaseYear: 2013, mediaType: .anime)
     ]
     
     var categories = [
@@ -71,10 +42,9 @@ struct ContentView: View {
     ]
     
     @State var selectedMedia: Media?
-    
+    @State var mediaView: MediaType = .movies
     
     var body: some View {
-        
         ScrollView {
             VStack(alignment: .leading) {
                 HStack {
@@ -89,7 +59,7 @@ struct ContentView: View {
                         Button(action: {
                             selectedMedia = media
                         }) {
-                            FeatureCard(title: media.title)
+                            FeaturedCard(imageName: "sample", title: media.title)
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
@@ -107,9 +77,6 @@ struct ContentView: View {
                         CategoryCard(name: category.name)
                     }
                 }
-                
-                
-                
             }
             .padding(24)
         }
@@ -117,13 +84,15 @@ struct ContentView: View {
         .sheet(item: $selectedMedia) { media in
             DetailView(media: media, dismissNil: $selectedMedia)
         }
+        .modifier(ToolbarModifier(currentView: $mediaView))
     }
 }
 
+#if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .previewLayout(.fixed(width: 1000, height: 600))
-            
     }
 }
+#endif
