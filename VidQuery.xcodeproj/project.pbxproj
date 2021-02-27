@@ -11,7 +11,7 @@
 		3C914EEC25E9FBEB00FAB882 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C914EEB25E9FBEB00FAB882 /* ContentView.swift */; };
 		3C914EEE25E9FBED00FAB882 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C914EED25E9FBED00FAB882 /* Assets.xcassets */; };
 		3C914EF125E9FBED00FAB882 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C914EF025E9FBED00FAB882 /* Preview Assets.xcassets */; };
-		3C914EFB25E9FDAE00FAB882 /* FeatureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C914EFA25E9FDAE00FAB882 /* FeatureCard.swift */; };
+		3C914EFB25E9FDAE00FAB882 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C914EFA25E9FDAE00FAB882 /* Cards.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +22,7 @@
 		3C914EF025E9FBED00FAB882 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3C914EF225E9FBED00FAB882 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C914EF325E9FBED00FAB882 /* VidQuery.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VidQuery.entitlements; sourceTree = "<group>"; };
-		3C914EFA25E9FDAE00FAB882 /* FeatureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCard.swift; sourceTree = "<group>"; };
+		3C914EFA25E9FDAE00FAB882 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +56,8 @@
 			isa = PBXGroup;
 			children = (
 				3C914EE925E9FBEB00FAB882 /* VidQueryApp.swift */,
-				3C914EFA25E9FDAE00FAB882 /* FeatureCard.swift */,
 				3C914EEB25E9FBEB00FAB882 /* ContentView.swift */,
+				3C914EFA25E9FDAE00FAB882 /* Cards.swift */,
 				3C914EED25E9FBED00FAB882 /* Assets.xcassets */,
 				3C914EF225E9FBED00FAB882 /* Info.plist */,
 				3C914EF325E9FBED00FAB882 /* VidQuery.entitlements */,
@@ -144,7 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C914EEC25E9FBEB00FAB882 /* ContentView.swift in Sources */,
-				3C914EFB25E9FDAE00FAB882 /* FeatureCard.swift in Sources */,
+				3C914EFB25E9FDAE00FAB882 /* Cards.swift in Sources */,
 				3C914EEA25E9FBEB00FAB882 /* VidQueryApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
