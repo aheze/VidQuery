@@ -39,9 +39,10 @@ struct ContentView: View {
         GridItem(.adaptive(minimum: 150), spacing: 24)
     ]
     
-    @State var selectedMedia: Media?
+    @State var selectedResult: TMDBMovieResult?
     @State var mediaView: MediaType = .movies
     
+    @State var movies = [TMDBMovieResult]()
     
     @State var searchFieldText: String = ""
     @State var searchResults: [MediaType : Any]?
@@ -54,18 +55,18 @@ struct ContentView: View {
                 ScrollView {
                     VStack(alignment: .leading) {
                         HStack {
-                            Text("Featured")
+                            Text("Trending")
                                 .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
                                 .font(.system(size: 24, weight: .medium))
                                 .padding(EdgeInsets(top: 16, leading: 0, bottom: 6, trailing: 0))
                         }
                         
                         LazyVGrid(columns: columns, alignment: .leading, spacing: 24) {
-                            ForEach(media) { media in
+                            ForEach(movies) { movie in
                                 Button(action: {
-                                    selectedMedia = media
+                                    selectedResult = movie
                                 }) {
-                                    FeaturedCard(imageURL: "https://github.com/aheze/DeveloperAssets/blob/master/cactus.png?raw=true", title: media.title)
+                                    FeaturedCard(imageURL: "https://image.tmdb.org/t/p/w500/" + (movie.posterPath ?? "/nBdoS8tjWubpEyQnqmM6tpZR3GU.jpg"), title: movie.title)
                                 }
                                 .buttonStyle(PlainButtonStyle())
                             }
@@ -86,11 +87,20 @@ struct ContentView: View {
                     }
                     .padding(24)
                 }
+                .onAppear {
+                    let api = TMDB_API()
+                    api.getTrending { results in
+                        if let movieResults = results[.movies] as? [TMDBMovieResult] {
+                            movies = Array(movieResults.prefix(10))
+                        }
+                    }
+                    
+                }
             }
         }
         .frame(minWidth: 350, maxWidth: .infinity, minHeight: 300, maxHeight: .infinity)
-        .sheet(item: $selectedMedia) { media in
-            DetailView(media: media, dismissNil: $selectedMedia)
+        .sheet(item: $selectedResult) { result in
+            DetailView(result: result, dismissNil: $selectedResult)
         }
         .modifier(ToolbarModifier(currentView: $mediaView, searchFieldText: $searchFieldText, searchResults: $searchResults))
     }

@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct DetailView: View {
-    let media: Media
-    @Binding var dismissNil: Media?
+    let result: TMDBMovieResult
+    @Binding var dismissNil: TMDBMovieResult?
     
     var body: some View {
         ScrollView {
@@ -27,7 +28,7 @@ struct DetailView: View {
                 }
                 
                 HStack(alignment: .top) {
-                    Image(media.imageName)
+                    KFImage.url(URL(string: "https://image.tmdb.org/t/p/w500/" + (result.posterPath ?? "/nBdoS8tjWubpEyQnqmM6tpZR3GU.jpg")))
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 150)
@@ -35,12 +36,12 @@ struct DetailView: View {
                         .shadow(color: Color(#colorLiteral(red: 0.5723067522, green: 0.5723067522, blue: 0.5723067522, alpha: 0.5)), radius: 5, x: 0.0, y: 2)
                     
                     VStack(alignment: .leading) {
-                        Text(media.title)
+                        Text(result.title)
                             .foregroundColor(Color(.secondaryLabelColor))
                             .font(.system(size: 22, weight: .bold))
                             .padding(.bottom, 6)
                         
-                        Text(media.description)
+                        Text(result.overview)
                             .foregroundColor(Color(.secondaryLabelColor))
                             .font(.system(size: 19, weight: .regular))
                     }
@@ -58,29 +59,29 @@ struct DetailView: View {
                     Spacer()
                 }
                 
-                ScrollView(.horizontal) {
-                    HStack {
-                        ForEach(media.providers) { provider in
-                            
-                            Button(action: {
-                                if let url = URL(string: provider.url) {
-                                    NSWorkspace.shared.open(url)
-                                }
-                            }) {
-                                Text(provider.name)
-                                    .foregroundColor(.white)
-                                    .padding(12)
-                                    .background(
-                                        Color(provider.color)
-                                    )
-                                    .cornerRadius(6)
-                                    .shadow(color: Color(#colorLiteral(red: 0.5723067522, green: 0.5723067522, blue: 0.5723067522, alpha: 0.5)), radius: 5, x: 0.0, y: 2)
-                            }
-                            .buttonStyle(PlainButtonStyle())
-                            .padding(.bottom, 12)
-                        }
-                    }
-                }
+//                ScrollView(.horizontal) {
+//                    HStack {
+//                        ForEach(media.providers) { provider in
+//
+//                            Button(action: {
+//                                if let url = URL(string: provider.url) {
+//                                    NSWorkspace.shared.open(url)
+//                                }
+//                            }) {
+//                                Text(provider.name)
+//                                    .foregroundColor(.white)
+//                                    .padding(12)
+//                                    .background(
+//                                        Color(provider.color)
+//                                    )
+//                                    .cornerRadius(6)
+//                                    .shadow(color: Color(#colorLiteral(red: 0.5723067522, green: 0.5723067522, blue: 0.5723067522, alpha: 0.5)), radius: 5, x: 0.0, y: 2)
+//                            }
+//                            .buttonStyle(PlainButtonStyle())
+//                            .padding(.bottom, 12)
+//                        }
+//                    }
+//                }
                 
                 HStack {
                     Text("Reviews")
@@ -100,11 +101,11 @@ struct DetailView: View {
 }
 
 #if DEBUG
-struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        let selectedMedia = Media(imageName: "sample", title: "Attack on Titan", releaseYear: 2013, mediaType: .tvShows)
-        DetailView(media: selectedMedia, dismissNil: .constant(selectedMedia))
-            .previewLayout(.fixed(width: 600, height: 600))
-    }
-}
+//struct DetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let selectedMedia = Media(imageName: "sample", title: "Attack on Titan", releaseYear: 2013, mediaType: .tvShows)
+//        DetailView(media: selectedMedia, dismissNil: .constant(selectedMedia))
+//            .previewLayout(.fixed(width: 600, height: 600))
+//    }
+//}
 #endif
