@@ -11,7 +11,12 @@ struct CategoryCard: View {
     let name: String
 
     var body: some View {
-        VStack {
+        HStack {
+            Image(name)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 35, height: 35)
+            
             Text(name)
                 .font(.system(size: 19, weight: .medium))
                 .padding(12)

@@ -13,7 +13,7 @@ struct ContentView: View {
     ]
 
     let categoryColumns = [
-        GridItem(.adaptive(minimum: 150), spacing: 24)
+        GridItem(.adaptive(minimum: 200), spacing: 24)
     ]
 
     @State var selectedResult: MediaResult?
@@ -65,7 +65,7 @@ struct ContentView: View {
                         }
 
                         HStack {
-                            Text("Categories")
+                            Text("Genres")
                                 .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
                                 .font(.system(size: 24, weight: .medium))
                                 .padding(EdgeInsets(top: 16, leading: 0, bottom: 6, trailing: 0))

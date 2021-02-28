@@ -61,8 +61,8 @@
 		128336DA25EAB6B900EEAEBE /* Cards */ = {
 			isa = PBXGroup;
 			children = (
-				128336D625EAB69700EEAEBE /* CategoryCard.swift */,
 				128336D325EAB67100EEAEBE /* FeaturedCard.swift */,
+				128336D625EAB69700EEAEBE /* CategoryCard.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
