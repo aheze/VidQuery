@@ -36,54 +36,61 @@ struct Provider: Identifiable {
     var url = "https://apple.com"
 }
 
-struct Category: Identifiable {
-    let id = UUID()
-    let name: String
+public struct Genre: Identifiable {
+    public let id: Int
+    public let name: String
 }
 
 // MARK: TMDB Structures
 
+public struct MediaResult: Identifiable {
+    public let id = UUID()
+    var type = MediaType.movies
+    var movie = TMDBMovieResult()
+    var tv = TMDBTVResult()
+}
+
 struct TMDBMovieResult: Identifiable {
-    let id: Int
+    var id = 0
 
-    let title: String
-    let originalTitle: String
+    var title: String = ""
+    var originalTitle: String = ""
 
-    let overview: String
+    var overview: String = ""
 
-    let adult: Bool
-    let posterPath: String?
-    let releaseDate: String
+    var adult: Bool = false
+    var posterPath: String? = nil
+    var releaseDate: String = ""
 
-    let genreIds: [Int]
+    var genreIds: [Int] = []
 
-    let popularity: Float
-    let voteCount: Int
-    let voteAverage: Float
+    var popularity: Float = 0
+    var voteCount: Int = 0
+    var voteAverage: Float = 0
 }
 
 struct TMDBTVResult: Identifiable {
-    let id: Int
+    var id = 0
 
-    let name: String
-    let originalName: String
+    var name: String = ""
+    var originalName: String = ""
 
-    let overview: String
+    var overview: String = ""
 
-    let posterPath: String?
-    let firstAirDate: String
-    let originCountry: [String]
+    var posterPath: String?
+    var firstAirDate: String = ""
+    var originCountry: [String] = []
 
-    let genreIds: [Int]
+    var genreIds: [Int] = []
 
-    let popularity: Float
-    let voteCount: Int
-    let voteAverage: Float
+    var popularity: Float = 0
+    var voteCount: Int = 0
+    var voteAverage: Float = 0
 }
 
 // MARK: Enums
 
-public enum MediaType {
-    case movies
-    case tvShows
+public enum MediaType: String {
+    case movies = "movie"
+    case tvShows = "tv"
 }

@@ -9,12 +9,14 @@ import SwiftUI
 import Kingfisher
 
 struct DetailView: View {
-    let result: TMDBMovieResult
-    @Binding var dismissNil: TMDBMovieResult?
+    let result: MediaResult
+    @Binding var dismissNil: MediaResult?
     
     var body: some View {
+        
         ScrollView {
             VStack {
+                
                 HStack {
                     Spacer()
                     
@@ -28,7 +30,7 @@ struct DetailView: View {
                 }
                 
                 HStack(alignment: .top) {
-                    KFImage.url(URL(string: "https://image.tmdb.org/t/p/w500/" + (result.posterPath ?? "/nBdoS8tjWubpEyQnqmM6tpZR3GU.jpg")))
+                    KFImage.url(URL(string: "https://image.tmdb.org/t/p/w500/" + (result.type == .movies ? result.movie.posterPath ?? "/nBdoS8tjWubpEyQnqmM6tpZR3GU.jpg" : result.tv.posterPath ?? "/nBdoS8tjWubpEyQnqmM6tpZR3GU.jpg")))
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 150)
@@ -36,28 +38,58 @@ struct DetailView: View {
                         .shadow(color: Color(#colorLiteral(red: 0.5723067522, green: 0.5723067522, blue: 0.5723067522, alpha: 0.5)), radius: 5, x: 0.0, y: 2)
                     
                     VStack(alignment: .leading) {
-                        Text(result.title)
+                        Text(result.type == .movies ? result.movie.title : result.tv.name)
                             .foregroundColor(Color(.secondaryLabelColor))
                             .font(.system(size: 22, weight: .bold))
                             .padding(.bottom, 6)
                         
-                        Text(result.overview)
+                        Text(result.type == .movies ? result.movie.overview : result.tv.overview)
                             .foregroundColor(Color(.secondaryLabelColor))
                             .font(.system(size: 19, weight: .regular))
+                        
+                        StarsView(rating: CGFloat(result.type == .movies ? result.movie.voteAverage : result.tv.voteAverage), maxRating: 10)
+                            .frame(height: 16)
+                        
+                        HStack {
+                            Text("\(result.type == .movies ? result.movie.voteCount : result.tv.voteCount) votes")
+                                .foregroundColor(Color(.secondaryLabelColor))
+                                .font(.system(size: 15, weight: .regular))
+                            
+                            Circle()
+                                .fill(
+                                    Color(.secondaryLabelColor)
+                                )
+                                .frame(width: 4, height: 4)
+                            
+                            Text("\(String(format: "%.1f", result.type == .movies ? result.movie.voteAverage : result.tv.voteAverage))/10")
+                                .foregroundColor(Color(.secondaryLabelColor))
+                                .font(.system(size: 15, weight: .regular))
+                            
+                            Spacer()
+                        }
                     }
                     .padding(.horizontal, 12)
                     
                     Spacer()
                 }
                 
-                HStack {
-                    Text("Where to Watch")
-                        .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
-                        .font(.system(size: 24, weight: .medium))
-                        .padding(.top, 16)
-                    
-                    Spacer()
-                }
+//                HStack {
+//                    Text("Where to Watch")
+//                        .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
+//                        .font(.system(size: 24, weight: .medium))
+//                        .padding(.top, 16)
+//
+//                    Spacer()
+//                }
+//
+//                HStack {
+//                    Text("Where to Watch")
+//                        .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
+//                        .font(.system(size: 24, weight: .medium))
+//                        .padding(.top, 16)
+//
+//                    Spacer()
+//                }
                 
 //                ScrollView(.horizontal) {
 //                    HStack {
@@ -83,29 +115,19 @@ struct DetailView: View {
 //                    }
 //                }
                 
-                HStack {
-                    Text("Reviews")
-                        .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
-                        .font(.system(size: 24, weight: .medium))
-                        .padding(.top, 16)
-                    
-                    Spacer()
-                }
+//                HStack {
+//                    Text("Reviews")
+//                        .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
+//                        .font(.system(size: 24, weight: .medium))
+//                        .padding(.top, 16)
+//
+//                    Spacer()
+//                }
                 
-                Spacer()
+//                Spacer()
             }
             .padding(24)
         }
         .frame(minWidth: 350, maxWidth: 800, minHeight: 300, maxHeight: .infinity)
     }
 }
-
-#if DEBUG
-//struct DetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let selectedMedia = Media(imageName: "sample", title: "Attack on Titan", releaseYear: 2013, mediaType: .tvShows)
-//        DetailView(media: selectedMedia, dismissNil: .constant(selectedMedia))
-//            .previewLayout(.fixed(width: 600, height: 600))
-//    }
-//}
-#endif

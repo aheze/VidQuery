@@ -11,7 +11,7 @@ struct ToolbarModifier: ViewModifier {
     @Binding var currentView: MediaType
     
     @Binding var searchFieldText: String
-    @Binding var searchResults: [MediaType : Any]?
+    @Binding var searchResults: [MediaResult]?
 
     func body(content: Content) -> some View {
         content
