@@ -7,42 +7,17 @@
 
 import SwiftUI
 
-//let media = [
-//    Media(imageName: "sample", title: "Attack on Titan T", releaseYear: 2013, mediaType: .tvShows),
-//    Media(imageName: "sample", title: "Attack on Titan M", releaseYear: 2013, mediaType: .movies),
-//    Media(imageName: "sample", title: "Attack on Titan M-1", releaseYear: 2013, mediaType: .movies),
-//    Media(imageName: "sample", title: "Attack on Titan T-1", releaseYear: 2013, mediaType: .tvShows)
-//]
-//
-//let categories = [
-//    Category(name: "Gaming"),
-//    Category(name: "Tech"),
-//    Category(name: "Cartoons"),
-//    Category(name: "Comedy"),
-//    Category(name: "Slice of life"),
-//    Category(name: "Action"),
-//    Category(name: "Gaming"),
-//    Category(name: "Tech"),
-//    Category(name: "Cartoons"),
-//    Category(name: "Comedy"),
-//    Category(name: "Slice of life"),
-//    Category(name: "Action"),
-//    Category(name: "Horror")
-//]
-
 struct ContentView: View {
     let columns = [
         GridItem(.adaptive(minimum: 120), spacing: 24)
     ]
     
-    let categoryColumns = [
+    let genreColumns = [
         GridItem(.adaptive(minimum: 150), spacing: 24)
     ]
     
     @State var selectedResult: MediaResult?
     @State var mediaView: MediaType = .movies
-    
-//    @State var movies = [TMDBMovieResult]()
     
     @State var trendingMedia = [MediaResult]()
     @State var genres = [Genre]()
@@ -85,17 +60,17 @@ struct ContentView: View {
                         }
 
                         HStack {
-                            Text("Categories")
+                            Text("Genres")
                                 .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
                                 .font(.system(size: 24, weight: .medium))
                                 .padding(EdgeInsets(top: 16, leading: 0, bottom: 6, trailing: 0))
                         }
 
-//                        LazyVGrid(columns: categoryColumns, alignment: .leading, spacing: 24) {
-//                            ForEach(categories) { category in
-//                                CategoryCard(name: category.name)
-//                            }
-//                        }
+                        LazyVGrid(columns: genreColumns, alignment: .leading, spacing: 24) {
+                            ForEach(genres) { genre in
+                                CategoryCard(name: genre.name)
+                            }
+                        }
                     }
                     .padding(24)
                     .sheet(item: $selectedResult) { result in

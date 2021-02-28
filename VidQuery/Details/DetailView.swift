@@ -128,6 +128,6 @@ struct DetailView: View {
             }
             .padding(24)
         }
-        .frame(minWidth: 350, maxWidth: 800, minHeight: 300, maxHeight: .infinity)
+        .frame(minWidth: 500, maxWidth: 1000, minHeight: 400, maxHeight: 800)
     }
 }
