@@ -38,6 +38,7 @@
 		3C914EEC25E9FBEB00FAB882 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C914EEB25E9FBEB00FAB882 /* ContentView.swift */; };
 		3C914EEE25E9FBED00FAB882 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C914EED25E9FBED00FAB882 /* Assets.xcassets */; };
 		3C914EF125E9FBED00FAB882 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C914EF025E9FBED00FAB882 /* Preview Assets.xcassets */; };
+		3CA83C5B25EB774D002FD507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C914EED25E9FBED00FAB882 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -273,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CA83C5B25EB774D002FD507 /* Assets.xcassets in Resources */,
 				3C65DE7E25EB63EF00D541DF /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
