@@ -26,11 +26,14 @@ struct ContentView: View {
 
     @State var searchFieldText: String = ""
     @State var searchResults: [MediaResult]?
+    
+    @State var presentedGenre: Genre?
 
     var body: some View {
-        Group {
+        ZStack {
             if !searchFieldText.isEmpty {
                 SearchView(searchFieldText: $searchFieldText, searchResults: $searchResults)
+                    .zIndex(0)
             } else {
                 ScrollView {
                     VStack(alignment: .leading) {
@@ -68,17 +71,25 @@ struct ContentView: View {
                                 .padding(EdgeInsets(top: 16, leading: 0, bottom: 6, trailing: 0))
                         }
 
-//                        LazyVGrid(columns: categoryColumns, alignment: .leading, spacing: 24) {
-//                            ForEach(categories) { category in
-//                                CategoryCard(name: category.name)
-//                            }
-//                        }
+                        LazyVGrid(columns: categoryColumns, alignment: .leading, spacing: 24) {
+                            ForEach(genres) { genre in
+                                
+                                Button(action: {
+                                    presentedGenre = genre
+                                }) {
+                                    CategoryCard(name: genre.name)
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                            }
+                        }
+                        
                     }
                     .padding(24)
                     .sheet(item: $selectedResult) { result in
                         DetailView(result: result, dismissNil: $selectedResult)
                     }
                 }
+                .zIndex(1)
                 .onAppear(perform: {
                     let api = TMDB_API()
                     api.getGenres { tmdbGenres in
@@ -88,15 +99,12 @@ struct ContentView: View {
                         trendingMedia = trending
                     }
                 })
-//                .onAppear {
-//                    let api = TMDB_API()
-//                    api.getTrending { results in
-//                        if let movieResults = results[.movies] as? [TMDBMovieResult] {
-//                            movies = Array(movieResults.prefix(10))
-//                        }
-//                    }
-//
-//                }
+            }
+            
+            if let presentedGenre = presentedGenre {
+                GalleryView(genre: presentedGenre, dismissNil: $presentedGenre, currentView: $mediaView)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .zIndex(2)
             }
         }
         .frame(minWidth: 350, maxWidth: .infinity, minHeight: 300, maxHeight: .infinity)

@@ -37,7 +37,6 @@ struct ToolbarModifier: ViewModifier {
                             print(response)
                             searchResults = response
                         }
-                        print("Completion handler?")
                     }
                         .modifier(TextFieldClearButtonModifier(text: $searchFieldText))
                         .textFieldStyle(RoundedBorderTextFieldStyle())

@@ -17,14 +17,13 @@ struct SearchView: View {
     @State var waitingForResults = true
     
     @Binding var searchFieldText: String
-//    @Binding var searchResults: [MediaType : Any]?
     @Binding var searchResults: [MediaResult]?
     
     var body: some View {
         ScrollView {
             VStack {
                 HStack {
-                    Text(searchResults == nil ? "Searching..." : "\(searchResults?.count ?? 0) Result\(searchResults?.count == 1 ? "" : "s")")
+                    Text(searchResults == nil ? "Press return to search" : "\(searchResults?.count ?? 0) Result\(searchResults?.count == 1 ? "" : "s")")
                         .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
                         .font(.system(size: 24, weight: .medium))
                         .padding(EdgeInsets(top: 16, leading: 0, bottom: 6, trailing: 0))

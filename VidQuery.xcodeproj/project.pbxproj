@@ -18,6 +18,7 @@
 		3C3E3B3B25EB0A7700C8ADA9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3C3E3B3A25EB0A7700C8ADA9 /* Kingfisher */; };
 		3C3E3B3F25EB16B900C8ADA9 /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E3B3E25EB16B900C8ADA9 /* StarsView.swift */; };
 		3C502BFA25EA062300D61772 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C502BF925EA062300D61772 /* DetailView.swift */; };
+		3C65DE4125EB3E4D00D541DF /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C65DE4025EB3E4D00D541DF /* GalleryView.swift */; };
 		3C914EEA25E9FBEB00FAB882 /* VidQueryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C914EE925E9FBEB00FAB882 /* VidQueryApp.swift */; };
 		3C914EEC25E9FBEB00FAB882 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C914EEB25E9FBEB00FAB882 /* ContentView.swift */; };
 		3C914EEE25E9FBED00FAB882 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C914EED25E9FBED00FAB882 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		3C3E3B3625EB00EA00C8ADA9 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		3C3E3B3E25EB16B900C8ADA9 /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
 		3C502BF925EA062300D61772 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		3C65DE4025EB3E4D00D541DF /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		3C914EE625E9FBEB00FAB882 /* VidQuery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VidQuery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C914EE925E9FBEB00FAB882 /* VidQueryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VidQueryApp.swift; sourceTree = "<group>"; };
 		3C914EEB25E9FBEB00FAB882 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				3C914EE925E9FBEB00FAB882 /* VidQueryApp.swift */,
 				3C914EEB25E9FBEB00FAB882 /* ContentView.swift */,
+				3C65DE4025EB3E4D00D541DF /* GalleryView.swift */,
 				3C3E3B3625EB00EA00C8ADA9 /* SearchView.swift */,
 				3C3E3B3D25EB16B000C8ADA9 /* Details */,
 				128336CC25EAB3D000EEAEBE /* Containers.swift */,
@@ -210,6 +213,7 @@
 				128336DE25EAD43400EEAEBE /* TextFieldClearButtonModifier.swift in Sources */,
 				128336D725EAB69700EEAEBE /* CategoryCard.swift in Sources */,
 				3C914EEA25E9FBEB00FAB882 /* VidQueryApp.swift in Sources */,
+				3C65DE4125EB3E4D00D541DF /* GalleryView.swift in Sources */,
 				128336C625EAB39200EEAEBE /* ToolbarModifier.swift in Sources */,
 				3C3E3B3F25EB16B900C8ADA9 /* StarsView.swift in Sources */,
 				128336CD25EAB3D000EEAEBE /* Containers.swift in Sources */,
