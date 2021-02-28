@@ -16,17 +16,17 @@ struct ToolbarModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .toolbar {
-                ToolbarItem {
-                    Picker(selection: $currentView, label: Text("View")) {
-                        Label("Movies", systemImage: "film")
-                            .labelStyle(TitleOnlyLabelStyle())
-                            .tag(MediaType.movies)
-                        Label("TV Shows", systemImage: "tv")
-                            .labelStyle(TitleOnlyLabelStyle())
-                            .tag(MediaType.tvShows)
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                }
+//                ToolbarItem {
+//                    Picker(selection: $currentView, label: Text("View")) {
+//                        Label("Movies", systemImage: "film")
+//                            .labelStyle(TitleOnlyLabelStyle())
+//                            .tag(MediaType.movies)
+//                        Label("TV Shows", systemImage: "tv")
+//                            .labelStyle(TitleOnlyLabelStyle())
+//                            .tag(MediaType.tvShows)
+//                    }
+//                    .pickerStyle(SegmentedPickerStyle())
+//                }
                 ToolbarItem {
                     TextField("Search...", text: $searchFieldText) { isEditing in
                         print("isEditing ??? \(isEditing)")

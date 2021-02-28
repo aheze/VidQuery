@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		128336C625EAB39200EEAEBE /* ToolbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336C525EAB39200EEAEBE /* ToolbarModifier.swift */; };
 		128336CD25EAB3D000EEAEBE /* Containers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336CC25EAB3D000EEAEBE /* Containers.swift */; };
+		128336D025EAB42200EEAEBE /* TMDB_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336CF25EAB42200EEAEBE /* TMDB_API.swift */; };
 		128336D425EAB67100EEAEBE /* FeaturedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336D325EAB67100EEAEBE /* FeaturedCard.swift */; };
 		128336D725EAB69700EEAEBE /* CategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336D625EAB69700EEAEBE /* CategoryCard.swift */; };
 		128336DE25EAD43400EEAEBE /* TextFieldClearButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336DD25EAD43400EEAEBE /* TextFieldClearButtonModifier.swift */; };
@@ -21,12 +22,12 @@
 		3C914EEC25E9FBEB00FAB882 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C914EEB25E9FBEB00FAB882 /* ContentView.swift */; };
 		3C914EEE25E9FBED00FAB882 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C914EED25E9FBED00FAB882 /* Assets.xcassets */; };
 		3C914EF125E9FBED00FAB882 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C914EF025E9FBED00FAB882 /* Preview Assets.xcassets */; };
-		3CB0CE5925EB2D980081EA36 /* TMDB_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0CE5825EB2D980081EA36 /* TMDB_API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		128336C525EAB39200EEAEBE /* ToolbarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarModifier.swift; sourceTree = "<group>"; };
 		128336CC25EAB3D000EEAEBE /* Containers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Containers.swift; sourceTree = "<group>"; };
+		128336CF25EAB42200EEAEBE /* TMDB_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_API.swift; sourceTree = "<group>"; };
 		128336D325EAB67100EEAEBE /* FeaturedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCard.swift; sourceTree = "<group>"; };
 		128336D625EAB69700EEAEBE /* CategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCard.swift; sourceTree = "<group>"; };
 		128336DD25EAD43400EEAEBE /* TextFieldClearButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButtonModifier.swift; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 		3C914EF025E9FBED00FAB882 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3C914EF225E9FBED00FAB882 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C914EF325E9FBED00FAB882 /* VidQuery.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VidQuery.entitlements; sourceTree = "<group>"; };
-		3CB0CE5825EB2D980081EA36 /* TMDB_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB_API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +107,7 @@
 				3C3E3B3625EB00EA00C8ADA9 /* SearchView.swift */,
 				3C3E3B3D25EB16B000C8ADA9 /* Details */,
 				128336CC25EAB3D000EEAEBE /* Containers.swift */,
-				3CB0CE5825EB2D980081EA36 /* TMDB_API.swift */,
+				128336CF25EAB42200EEAEBE /* TMDB_API.swift */,
 				128336DA25EAB6B900EEAEBE /* Cards */,
 				128336E025EAD43700EEAEBE /* Modifiers */,
 				3C914EED25E9FBED00FAB882 /* Assets.xcassets */,
@@ -205,8 +205,8 @@
 			files = (
 				3C3E3B3725EB00EA00C8ADA9 /* SearchView.swift in Sources */,
 				3C914EEC25E9FBEB00FAB882 /* ContentView.swift in Sources */,
+				128336D025EAB42200EEAEBE /* TMDB_API.swift in Sources */,
 				3C502BFA25EA062300D61772 /* DetailView.swift in Sources */,
-				3CB0CE5925EB2D980081EA36 /* TMDB_API.swift in Sources */,
 				128336DE25EAD43400EEAEBE /* TextFieldClearButtonModifier.swift in Sources */,
 				128336D725EAB69700EEAEBE /* CategoryCard.swift in Sources */,
 				3C914EEA25E9FBEB00FAB882 /* VidQueryApp.swift in Sources */,

@@ -11,22 +11,24 @@ struct ContentView: View {
     let columns = [
         GridItem(.adaptive(minimum: 120), spacing: 24)
     ]
-    
-    let genreColumns = [
+
+    let categoryColumns = [
         GridItem(.adaptive(minimum: 150), spacing: 24)
     ]
-    
+
     @State var selectedResult: MediaResult?
     @State var mediaView: MediaType = .movies
-    
+
+//    @State var movies = [TMDBMovieResult]()
+
     @State var trendingMedia = [MediaResult]()
     @State var genres = [Genre]()
-    
+
     @State var searchFieldText: String = ""
     @State var searchResults: [MediaResult]?
-    
+
     var body: some View {
-//        Group {
+        Group {
             if !searchFieldText.isEmpty {
                 SearchView(searchFieldText: $searchFieldText, searchResults: $searchResults)
             } else {
@@ -36,10 +38,10 @@ struct ContentView: View {
                             Text("Trending")
                                 .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
                                 .font(.system(size: 24, weight: .medium))
-                                .padding(EdgeInsets(top: 16, leading: 0, bottom: 6, trailing: 0))
+                                .padding(.bottom, 16)
                         }
 
-                        LazyVGrid(columns: columns, alignment: .leading, spacing: 24) {
+                        LazyVGrid(columns: columns, alignment: .leading, spacing: 16) {
                             ForEach(trendingMedia) { media in
                                 if media.type == .movies {
                                     Button(action: {
@@ -48,7 +50,7 @@ struct ContentView: View {
                                         FeaturedCard(imageURL: "https://image.tmdb.org/t/p/w500/" + (media.movie.posterPath ?? "/nBdoS8tjWubpEyQnqmM6tpZR3GU.jpg"), title: media.movie.title)
                                     }
                                     .buttonStyle(PlainButtonStyle())
-                                } else  {
+                                } else {
                                     Button(action: {
                                         selectedResult = media
                                     }) {
@@ -60,17 +62,17 @@ struct ContentView: View {
                         }
 
                         HStack {
-                            Text("Genres")
+                            Text("Categories")
                                 .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
                                 .font(.system(size: 24, weight: .medium))
                                 .padding(EdgeInsets(top: 16, leading: 0, bottom: 6, trailing: 0))
                         }
 
-                        LazyVGrid(columns: genreColumns, alignment: .leading, spacing: 24) {
-                            ForEach(genres) { genre in
-                                CategoryCard(name: genre.name)
-                            }
-                        }
+//                        LazyVGrid(columns: categoryColumns, alignment: .leading, spacing: 24) {
+//                            ForEach(categories) { category in
+//                                CategoryCard(name: category.name)
+//                            }
+//                        }
                     }
                     .padding(24)
                     .sheet(item: $selectedResult) { result in
@@ -82,7 +84,7 @@ struct ContentView: View {
                     api.getGenres { tmdbGenres in
                         genres = tmdbGenres
                     }
-                    api.getTrending(mediaType: mediaView) { (trending) in
+                    api.getTrending(mediaType: mediaView) { trending in
                         trendingMedia = trending
                     }
                 })
@@ -96,9 +98,9 @@ struct ContentView: View {
 //
 //                }
             }
-//        }
-//        .frame(minWidth: 350, maxWidth: .infinity, minHeight: 300, maxHeight: .infinity)
-//        .modifier(ToolbarModifier(currentView: $mediaView, searchFieldText: $searchFieldText, searchResults: $searchResults))
+        }
+        .frame(minWidth: 350, maxWidth: .infinity, minHeight: 300, maxHeight: .infinity)
+        .modifier(ToolbarModifier(currentView: $mediaView, searchFieldText: $searchFieldText, searchResults: $searchResults))
     }
 }
 

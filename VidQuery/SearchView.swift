@@ -23,15 +23,13 @@ struct SearchView: View {
     var body: some View {
         ScrollView {
             VStack {
-                
                 HStack {
-                    Text(searchResults == nil ? "Searching..." : "\(searchResults?.count ?? 0) results")
+                    Text(searchResults == nil ? "Searching..." : "\(searchResults?.count ?? 0) Result\(searchResults?.count == 1 ? "" : "s")")
                         .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
                         .font(.system(size: 24, weight: .medium))
                         .padding(EdgeInsets(top: 16, leading: 0, bottom: 6, trailing: 0))
                     
                     Spacer()
-                    
                 }
                 .padding(EdgeInsets(top: 16, leading: 24, bottom: 0, trailing: 24))
                 
@@ -39,16 +37,8 @@ struct SearchView: View {
                     Spacer()
                 } else {
                     if let results = searchResults {
-                        
-                        LazyVGrid(columns: columns, alignment: .leading, spacing: 24) {
+                        LazyVGrid(columns: columns, alignment: .leading, spacing: 16) {
                             ForEach(results) { result in
-                                
-//                                Button(action: {
-//                                    selectedResult = result
-//                                }) {
-//                                    FeaturedCard(imageURL: "https://image.tmdb.org/t/p/w500/" + (result.posterPath ?? "/nBdoS8tjWubpEyQnqmM6tpZR3GU.jpg"), title: result.title)
-//                                }
-//                                .buttonStyle(PlainButtonStyle())
                                 if result.type == .movies {
                                     Button(action: {
                                         selectedResult = result
@@ -56,7 +46,7 @@ struct SearchView: View {
                                         FeaturedCard(imageURL: "https://image.tmdb.org/t/p/w500/" + (result.movie.posterPath ?? "/nBdoS8tjWubpEyQnqmM6tpZR3GU.jpg"), title: result.movie.title)
                                     }
                                     .buttonStyle(PlainButtonStyle())
-                                } else  {
+                                } else {
                                     Button(action: {
                                         selectedResult = result
                                     }) {
@@ -70,7 +60,6 @@ struct SearchView: View {
                         .sheet(item: $selectedResult) { result in
                             DetailView(result: result, dismissNil: $selectedResult)
                         }
-                        
                     }
                 }
             }
@@ -87,4 +76,3 @@ struct SearchView_Previews: PreviewProvider {
     }
 }
 #endif
-
