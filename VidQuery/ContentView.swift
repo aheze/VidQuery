@@ -54,6 +54,7 @@ struct ContentView: View {
                             .font(.system(size: 24, weight: .medium))
                             .padding(6)
                     }
+                    .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
                     .buttonStyle(PlainButtonStyle())
                     .padding(.trailing, 20)
                     .sheet(isPresented: $showAboutSheet) {
