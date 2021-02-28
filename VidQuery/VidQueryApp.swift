@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct VidQueryApp: App {
+    
     #if os(macOS)
-    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate: NSApplicationDelegate
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     #endif
+    
     @AppStorage("appearance") var appearance: Appearance = .system
 
     var body: some Scene {

@@ -75,9 +75,11 @@ struct ContributorListRow: View {
 }
 
 #if DEBUG
+#if os(iOS)
 struct AboutView_Previews: PreviewProvider {
     static var previews: some View {
         AboutView(isPresented: .constant(false))
     }
 }
+#endif
 #endif
