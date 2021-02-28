@@ -77,6 +77,7 @@ struct GalleryView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
             Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
+                .edgesIgnoringSafeArea(.all)
         )
         .onAppear {
             

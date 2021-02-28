@@ -29,101 +29,114 @@ struct ContentView: View {
     @State var presentedGenre: Genre?
     
     var body: some View {
-        ZStack {
-            ScrollView {
-                VStack(alignment: .leading) {
+        
+        VStack {
+            #if os(iOS)
+            if presentedGenre == nil {
+                TextField("Search...", text: $searchFieldText) { isEditing in
                     
-                    #if os(iOS)
-                    TextField("Search...", text: $searchFieldText) { isEditing in
-                        print("isEditing ??? \(isEditing)")
-                    } onCommit: {
-                        print("Searching for \"\(searchFieldText)\"...")
-                        let api = TMDB_API()
-                        api.search(query: searchFieldText, mediaType: mediaView) { response in
-                            searchResults = response
-                        }
+                } onCommit: {
+                    print("Searching for \"\(searchFieldText)\"...")
+                    let api = TMDB_API()
+                    api.search(query: searchFieldText, mediaType: mediaView) { response in
+                        searchResults = response
                     }
+                }
+                .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20))
+            }
+            #endif
+            
+            ZStack {
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        
+                        HStack {
+                            Text("Trending")
+                                .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
+                                .font(.system(size: 24, weight: .medium))
+                                .padding(.bottom, 16)
+                        }
+                        
+                        LazyVGrid(columns: columns, alignment: .leading, spacing: 16) {
+                            ForEach(trendingMedia) { media in
+                                if media.type == .movies {
+                                    Button(action: {
+                                        selectedResult = media
+                                    }) {
+                                        FeaturedCard(imageURL: "https://image.tmdb.org/t/p/w500/" + (media.movie.posterPath ?? "/nBdoS8tjWubpEyQnqmM6tpZR3GU.jpg"), title: media.movie.title)
+                                    }
+                                    .buttonStyle(PlainButtonStyle())
+                                } else {
+                                    Button(action: {
+                                        selectedResult = media
+                                    }) {
+                                        FeaturedCard(imageURL: "https://image.tmdb.org/t/p/w500/" + (media.tv.posterPath ?? "/nBdoS8tjWubpEyQnqmM6tpZR3GU.jpg"), title: media.tv.name)
+                                    }
+                                    .buttonStyle(PlainButtonStyle())
+                                }
+                            }
+                        }
+                        
+                        HStack {
+                            Text("Genres")
+                                .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
+                                .font(.system(size: 24, weight: .medium))
+                                .padding(EdgeInsets(top: 16, leading: 0, bottom: 6, trailing: 0))
+                        }
+                        
+                        LazyVGrid(columns: categoryColumns, alignment: .leading, spacing: 24) {
+                            ForEach(genres) { genre in
+                                
+                                Button(action: {
+                                    withAnimation(.easeOut(duration: 0.6)) {
+                                        presentedGenre = genre
+                                    }
+                                }) {
+                                    CategoryCard(name: genre.name)
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                            }
+                        }
+                        
+                    }
+                    .padding(24)
+                    .sheet(item: $selectedResult) { result in
+                        DetailView(result: result, dismissNil: $selectedResult)
+                    }
+                }
+                .zIndex(0)
+                
+                
+                if !searchFieldText.isEmpty {
+                    
+                    
+                    #if os(macOS)
+                    SearchView(searchFieldText: $searchFieldText, searchResults: $searchResults)
+                        .zIndex(1)
+                    #else
+                    SearchView(searchFieldText: $searchFieldText, searchResults: $searchResults)
+                        .frame(maxHeight: .infinity)
+                        .zIndex(1)
+                        .background(
+                            Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+                                .edgesIgnoringSafeArea(.all)
+                        )
                     #endif
-                    
-                    HStack {
-                        Text("Trending")
-                            .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
-                            .font(.system(size: 24, weight: .medium))
-                            .padding(.bottom, 16)
-                    }
-                    
-                    LazyVGrid(columns: columns, alignment: .leading, spacing: 16) {
-                        ForEach(trendingMedia) { media in
-                            if media.type == .movies {
-                                Button(action: {
-                                    selectedResult = media
-                                }) {
-                                    FeaturedCard(imageURL: "https://image.tmdb.org/t/p/w500/" + (media.movie.posterPath ?? "/nBdoS8tjWubpEyQnqmM6tpZR3GU.jpg"), title: media.movie.title)
-                                }
-                                .buttonStyle(PlainButtonStyle())
-                            } else {
-                                Button(action: {
-                                    selectedResult = media
-                                }) {
-                                    FeaturedCard(imageURL: "https://image.tmdb.org/t/p/w500/" + (media.tv.posterPath ?? "/nBdoS8tjWubpEyQnqmM6tpZR3GU.jpg"), title: media.tv.name)
-                                }
-                                .buttonStyle(PlainButtonStyle())
-                            }
-                        }
-                    }
-                    
-                    HStack {
-                        Text("Genres")
-                            .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
-                            .font(.system(size: 24, weight: .medium))
-                            .padding(EdgeInsets(top: 16, leading: 0, bottom: 6, trailing: 0))
-                    }
-                    
-                    LazyVGrid(columns: categoryColumns, alignment: .leading, spacing: 24) {
-                        ForEach(genres) { genre in
-                            
-                            Button(action: {
-                                withAnimation(.easeOut(duration: 0.6)) {
-                                    presentedGenre = genre
-                                }
-                            }) {
-                                CategoryCard(name: genre.name)
-                            }
-                            .buttonStyle(PlainButtonStyle())
-                        }
-                    }
-                    
                 }
-                .padding(24)
-                .sheet(item: $selectedResult) { result in
-                    DetailView(result: result, dismissNil: $selectedResult)
+                if let presentedGenre = presentedGenre {
+                    GalleryView(genre: presentedGenre, dismissNil: $presentedGenre, currentView: $mediaView)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .transition(.move(edge: .top))
+                        .zIndex(2)
                 }
             }
-            .zIndex(0)
-            
-            if !searchFieldText.isEmpty {
-                
-                
-                #if os(macOS)
-                SearchView(searchFieldText: $searchFieldText, searchResults: $searchResults)
-                    .zIndex(1)
-                #else
-                SearchView(searchFieldText: $searchFieldText, searchResults: $searchResults)
-                    .frame(maxHeight: .infinity)
-                    .zIndex(1)
-                    .padding(.top, 24)
-                #endif
-            }
             
             
             
             
-            if let presentedGenre = presentedGenre {
-                GalleryView(genre: presentedGenre, dismissNil: $presentedGenre, currentView: $mediaView)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .transition(.move(edge: .top))
-                    .zIndex(2)
-            }
+            
+           
+            
         }
         .onAppear(perform: {
             let api = TMDB_API()
