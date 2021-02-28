@@ -86,6 +86,9 @@ struct ContentView: View {
                         }
                     }
                     .padding(24)
+                    .sheet(item: $selectedResult) { result in
+                        DetailView(result: result, dismissNil: $selectedResult)
+                    }
                 }
                 .onAppear {
                     let api = TMDB_API()
@@ -99,9 +102,6 @@ struct ContentView: View {
             }
         }
         .frame(minWidth: 350, maxWidth: .infinity, minHeight: 300, maxHeight: .infinity)
-        .sheet(item: $selectedResult) { result in
-            DetailView(result: result, dismissNil: $selectedResult)
-        }
         .modifier(ToolbarModifier(currentView: $mediaView, searchFieldText: $searchFieldText, searchResults: $searchResults))
     }
 }

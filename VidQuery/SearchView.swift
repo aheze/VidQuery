@@ -24,7 +24,7 @@ struct SearchView: View {
             VStack {
                 
                 HStack {
-                    Text(searchResults == nil ? "Searching..." : "Results")
+                    Text(searchResults == nil ? "Searching..." : "\((searchResults?[.movies] as? [TMDBMovieResult])?.count ?? 0) results")
                         .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
                         .font(.system(size: 24, weight: .medium))
                         .padding(EdgeInsets(top: 16, leading: 0, bottom: 6, trailing: 0))
@@ -49,17 +49,16 @@ struct SearchView: View {
                                 .buttonStyle(PlainButtonStyle())
                             }
                         }
-                        
                         .padding(24)
+                        .sheet(item: $selectedResult) { result in
+                            DetailView(result: result, dismissNil: $selectedResult)
+                        }
                         
                     }
                 }
             }
         }
         .frame(minWidth: 350, maxWidth: .infinity, minHeight: 300, maxHeight: .infinity)
-        .sheet(item: $selectedResult) { result in
-            DetailView(result: result, dismissNil: $selectedResult)
-        }
     }
 }
 
