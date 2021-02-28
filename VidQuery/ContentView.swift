@@ -43,7 +43,7 @@ struct ContentView: View {
                         }
                     }
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20))
+                    .padding(.leading, 20)
                     
                     Spacer()
                     
@@ -55,10 +55,12 @@ struct ContentView: View {
                             .padding(6)
                     }
                     .buttonStyle(PlainButtonStyle())
+                    .padding(.trailing, 20)
                     .sheet(isPresented: $showAboutSheet) {
                         AboutView(isPresented: $showAboutSheet)
                     }
                 }
+                .padding(.top, 20)
             }
             #endif
             
