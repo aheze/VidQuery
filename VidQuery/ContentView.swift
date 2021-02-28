@@ -19,7 +19,6 @@ struct ContentView: View {
     @State var selectedResult: MediaResult?
     @State var mediaView: MediaType = .movies
 
-//    @State var movies = [TMDBMovieResult]()
 
     @State var trendingMedia = [MediaResult]()
     @State var genres = [Genre]()
@@ -37,6 +36,19 @@ struct ContentView: View {
             } else {
                 ScrollView {
                     VStack(alignment: .leading) {
+                        
+                        #if os(iOS)
+                        TextField("Search...", text: $searchFieldText) { isEditing in
+                            print("isEditing ??? \(isEditing)")
+                        } onCommit: {
+                            print("Searching for \"\(searchFieldText)\"...")
+                            let api = TMDB_API()
+                            api.search(query: searchFieldText, mediaType: mediaView) { response in
+                                searchResults = response
+                            }
+                        }
+                        #endif
+                        
                         HStack {
                             Text("Trending")
                                 .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))

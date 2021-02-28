@@ -5,7 +5,11 @@
 //  Created by H. Kamran on 2/27/21.
 //
 
+#if os(macOS)
 import Cocoa
+#else
+import UIKit
+#endif
 import Foundation
 
 // MARK: Structures
@@ -32,7 +36,11 @@ struct Media: Identifiable {
 struct Provider: Identifiable {
     let id = UUID()
     var name = "VRV"
+    #if os(macOS)
     var color: NSColor
+    #else
+    var color: UIColor
+    #endif
     var url = "https://apple.com"
 }
 

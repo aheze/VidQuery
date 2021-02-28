@@ -26,7 +26,7 @@ struct DetailView: View {
                     VStack(alignment: .leading) {
                         HStack(alignment: .center) {
                             Text("\(result.type == .movies ? result.movie.title : result.tv.name) (\((result.type == .movies ? result.movie.releaseDate : result.tv.firstAirDate).components(separatedBy: "-")[0]))")
-                                .foregroundColor(Color(.secondaryLabelColor))
+                                .foregroundColor(Color(.secondaryLabel))
                                 .font(.system(size: 22, weight: .bold))
                                 .padding(.bottom, 3)
                         
@@ -43,7 +43,7 @@ struct DetailView: View {
                         .padding(.bottom, 8)
                         
                         Text(result.type == .movies ? result.movie.overview : result.tv.overview)
-                            .foregroundColor(Color(.secondaryLabelColor))
+                            .foregroundColor(Color(.secondaryLabel))
                             .font(.system(size: 16, weight: .regular))
                             .padding(.bottom, 8)
                         
@@ -52,17 +52,17 @@ struct DetailView: View {
                         
                         HStack {
                             Text("\(result.type == .movies ? result.movie.voteCount : result.tv.voteCount) votes")
-                                .foregroundColor(Color(.secondaryLabelColor))
+                                .foregroundColor(Color(.secondaryLabel))
                                 .font(.system(size: 15, weight: .regular))
                             
                             Circle()
                                 .fill(
-                                    Color(.secondaryLabelColor)
+                                    Color(.secondaryLabel)
                                 )
                                 .frame(width: 4, height: 4)
                             
                             Text("\(String(format: "%.1f", result.type == .movies ? result.movie.voteAverage : result.tv.voteAverage))/10")
-                                .foregroundColor(Color(.secondaryLabelColor))
+                                .foregroundColor(Color(.secondaryLabel))
                                 .font(.system(size: 15, weight: .regular))
                             
                             Spacer()
@@ -74,7 +74,11 @@ struct DetailView: View {
                             
                             Button(action: {
                                 if let url = URL(string: "https://www.themoviedb.org/\(result.type.rawValue)/\(result.type == .movies ? result.movie.id : result.tv.id)") {
+                                    #if os(macOS)
                                     NSWorkspace.shared.open(url)
+                                    #else
+                                    UIApplication.shared.open(url)
+                                    #endif
                                 }
                             }) {
                                 Text("Open on TheMovieDb")

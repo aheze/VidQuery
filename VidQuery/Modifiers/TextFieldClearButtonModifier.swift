@@ -17,10 +17,19 @@ struct TextFieldClearButtonModifier: ViewModifier {
             if !text.isEmpty {
                 Button(action: {
                     self.text = ""
+                    
+                    #if os(macOS)
                     NSApp.keyWindow?.makeFirstResponder(nil)
+                    #endif
                 }) {
+                    
+                    #if os(macOS)
                     Image(systemName: "xmark.circle")
                         .foregroundColor(Color(.separatorColor))
+                    #else
+                    Image(systemName: "xmark.circle")
+                        .foregroundColor(Color(.separator))
+                    #endif
                 }
             }
         }

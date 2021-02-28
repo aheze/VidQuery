@@ -19,6 +19,21 @@
 		3C3E3B3F25EB16B900C8ADA9 /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E3B3E25EB16B900C8ADA9 /* StarsView.swift */; };
 		3C502BFA25EA062300D61772 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C502BF925EA062300D61772 /* DetailView.swift */; };
 		3C65DE4125EB3E4D00D541DF /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C65DE4025EB3E4D00D541DF /* GalleryView.swift */; };
+		3C65DE7E25EB63EF00D541DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C65DE7D25EB63EF00D541DF /* Preview Assets.xcassets */; };
+		3C65DE8925EB64A200D541DF /* VidQueryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C914EE925E9FBEB00FAB882 /* VidQueryApp.swift */; };
+		3C65DE8A25EB64A200D541DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C914EEB25E9FBEB00FAB882 /* ContentView.swift */; };
+		3C65DE8B25EB64A200D541DF /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C65DE4025EB3E4D00D541DF /* GalleryView.swift */; };
+		3C65DE8C25EB64A200D541DF /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E3B3625EB00EA00C8ADA9 /* SearchView.swift */; };
+		3C65DE8D25EB64A200D541DF /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C502BF925EA062300D61772 /* DetailView.swift */; };
+		3C65DE8E25EB64A200D541DF /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E3B3E25EB16B900C8ADA9 /* StarsView.swift */; };
+		3C65DE8F25EB64A200D541DF /* Containers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336CC25EAB3D000EEAEBE /* Containers.swift */; };
+		3C65DE9025EB64A200D541DF /* TMDB_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336CF25EAB42200EEAEBE /* TMDB_API.swift */; };
+		3C65DE9125EB64A200D541DF /* FeaturedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336D325EAB67100EEAEBE /* FeaturedCard.swift */; };
+		3C65DE9225EB64A200D541DF /* CategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336D625EAB69700EEAEBE /* CategoryCard.swift */; };
+		3C65DE9325EB64A200D541DF /* TextFieldClearButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336DD25EAD43400EEAEBE /* TextFieldClearButtonModifier.swift */; };
+		3C65DE9425EB64A200D541DF /* ToolbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336C525EAB39200EEAEBE /* ToolbarModifier.swift */; };
+		3C65DE9925EB64CE00D541DF /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 3C65DE9825EB64CE00D541DF /* SwiftyJSON */; };
+		3C65DE9B25EB64CE00D541DF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3C65DE9A25EB64CE00D541DF /* Kingfisher */; };
 		3C914EEA25E9FBEB00FAB882 /* VidQueryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C914EE925E9FBEB00FAB882 /* VidQueryApp.swift */; };
 		3C914EEC25E9FBEB00FAB882 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C914EEB25E9FBEB00FAB882 /* ContentView.swift */; };
 		3C914EEE25E9FBED00FAB882 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C914EED25E9FBED00FAB882 /* Assets.xcassets */; };
@@ -36,6 +51,9 @@
 		3C3E3B3E25EB16B900C8ADA9 /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
 		3C502BF925EA062300D61772 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		3C65DE4025EB3E4D00D541DF /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		3C65DE7425EB63ED00D541DF /* VidQuery (iOS).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VidQuery (iOS).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C65DE7D25EB63EF00D541DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3C65DE7F25EB63EF00D541DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C914EE625E9FBEB00FAB882 /* VidQuery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VidQuery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C914EE925E9FBEB00FAB882 /* VidQueryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VidQueryApp.swift; sourceTree = "<group>"; };
 		3C914EEB25E9FBEB00FAB882 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +64,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3C65DE7125EB63ED00D541DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C65DE9B25EB64CE00D541DF /* Kingfisher in Frameworks */,
+				3C65DE9925EB64CE00D541DF /* SwiftyJSON in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3C914EE325E9FBEB00FAB882 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,11 +112,37 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		3C65DE7525EB63EE00D541DF /* VidQuery (iOS) */ = {
+			isa = PBXGroup;
+			children = (
+				3C65DE7F25EB63EF00D541DF /* Info.plist */,
+				3C65DE7C25EB63EF00D541DF /* Preview Content */,
+			);
+			path = "VidQuery (iOS)";
+			sourceTree = "<group>";
+		};
+		3C65DE7C25EB63EF00D541DF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3C65DE7D25EB63EF00D541DF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3C65DE9725EB64CE00D541DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3C914EDD25E9FBEB00FAB882 = {
 			isa = PBXGroup;
 			children = (
 				3C914EE825E9FBEB00FAB882 /* VidQuery */,
+				3C65DE7525EB63EE00D541DF /* VidQuery (iOS) */,
 				3C914EE725E9FBEB00FAB882 /* Products */,
+				3C65DE9725EB64CE00D541DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				3C914EE625E9FBEB00FAB882 /* VidQuery.app */,
+				3C65DE7425EB63ED00D541DF /* VidQuery (iOS).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +186,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3C65DE7325EB63ED00D541DF /* VidQuery (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C65DE8025EB63EF00D541DF /* Build configuration list for PBXNativeTarget "VidQuery (iOS)" */;
+			buildPhases = (
+				3C65DE7025EB63ED00D541DF /* Sources */,
+				3C65DE7125EB63ED00D541DF /* Frameworks */,
+				3C65DE7225EB63ED00D541DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VidQuery (iOS)";
+			packageProductDependencies = (
+				3C65DE9825EB64CE00D541DF /* SwiftyJSON */,
+				3C65DE9A25EB64CE00D541DF /* Kingfisher */,
+			);
+			productName = "VidQuery (iOS)";
+			productReference = 3C65DE7425EB63ED00D541DF /* VidQuery (iOS).app */;
+			productType = "com.apple.product-type.application";
+		};
 		3C914EE525E9FBEB00FAB882 /* VidQuery */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C914EF625E9FBED00FAB882 /* Build configuration list for PBXNativeTarget "VidQuery" */;
@@ -162,6 +237,9 @@
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					3C65DE7325EB63ED00D541DF = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					3C914EE525E9FBEB00FAB882 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -185,11 +263,20 @@
 			projectRoot = "";
 			targets = (
 				3C914EE525E9FBEB00FAB882 /* VidQuery */,
+				3C65DE7325EB63ED00D541DF /* VidQuery (iOS) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3C65DE7225EB63ED00D541DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C65DE7E25EB63EF00D541DF /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3C914EE425E9FBEB00FAB882 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -202,6 +289,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3C65DE7025EB63ED00D541DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C65DE8925EB64A200D541DF /* VidQueryApp.swift in Sources */,
+				3C65DE8A25EB64A200D541DF /* ContentView.swift in Sources */,
+				3C65DE8B25EB64A200D541DF /* GalleryView.swift in Sources */,
+				3C65DE8C25EB64A200D541DF /* SearchView.swift in Sources */,
+				3C65DE8D25EB64A200D541DF /* DetailView.swift in Sources */,
+				3C65DE8E25EB64A200D541DF /* StarsView.swift in Sources */,
+				3C65DE8F25EB64A200D541DF /* Containers.swift in Sources */,
+				3C65DE9025EB64A200D541DF /* TMDB_API.swift in Sources */,
+				3C65DE9125EB64A200D541DF /* FeaturedCard.swift in Sources */,
+				3C65DE9225EB64A200D541DF /* CategoryCard.swift in Sources */,
+				3C65DE9325EB64A200D541DF /* TextFieldClearButtonModifier.swift in Sources */,
+				3C65DE9425EB64A200D541DF /* ToolbarModifier.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3C914EE225E9FBEB00FAB882 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -224,6 +330,53 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		3C65DE8125EB63EF00D541DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"VidQuery (iOS)/Preview Content\"";
+				DEVELOPMENT_TEAM = YA533DMD5J;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "VidQuery (iOS)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aheze.VidQuery--iOS-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3C65DE8225EB63EF00D541DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"VidQuery (iOS)/Preview Content\"";
+				DEVELOPMENT_TEAM = YA533DMD5J;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "VidQuery (iOS)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.aheze.VidQuery--iOS-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		3C914EF425E9FBED00FAB882 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -390,6 +543,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3C65DE8025EB63EF00D541DF /* Build configuration list for PBXNativeTarget "VidQuery (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C65DE8125EB63EF00D541DF /* Debug */,
+				3C65DE8225EB63EF00D541DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3C914EE125E9FBEB00FAB882 /* Build configuration list for PBXProject "VidQuery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -436,6 +598,16 @@
 			productName = SwiftyJSON;
 		};
 		3C3E3B3A25EB0A7700C8ADA9 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C3E3B3925EB0A7700C8ADA9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		3C65DE9825EB64CE00D541DF /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 128336E325EAD78800EEAEBE /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		3C65DE9A25EB64CE00D541DF /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3C3E3B3925EB0A7700C8ADA9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;

@@ -15,10 +15,13 @@ struct VidQueryApp: App {
         WindowGroup {
             ContentView()
                 .onAppear(perform: {
+                    #if os(macOS)
                     NSApp.appearance = NSAppearance(named: .aqua)
+                    #endif
                 })
         }
         .commands {
+            #if os(macOS)
             CommandGroup(before: .sidebar) {
                 Menu("Theme") {
                     Button(action: {
@@ -49,6 +52,7 @@ struct VidQueryApp: App {
                     .modifier(MenuButtonStyling())
                 }
             }
+            #endif
         }
     }
 }

@@ -76,14 +76,12 @@ struct GalleryView: View {
         
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
-            Color(.textBackgroundColor)
-            
+            Color(.systemBackground)
         )
         .onAppear {
             
             let api = TMDB_API()
             api.search(genre: genre, mediaType: currentView) { response in
-                print(response)
                 searchResults = response
             }
             
