@@ -14,6 +14,15 @@
 		128336D725EAB69700EEAEBE /* CategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336D625EAB69700EEAEBE /* CategoryCard.swift */; };
 		128336DE25EAD43400EEAEBE /* TextFieldClearButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336DD25EAD43400EEAEBE /* TextFieldClearButtonModifier.swift */; };
 		128336E525EAD78800EEAEBE /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 128336E425EAD78800EEAEBE /* SwiftyJSON */; };
+		128336F225EB7D9600EEAEBE /* BackgroundColorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336F125EB7D9600EEAEBE /* BackgroundColorModifier.swift */; };
+		128336F825EB7EFF00EEAEBE /* ForegroundColorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336F725EB7EFF00EEAEBE /* ForegroundColorModifier.swift */; };
+		128336F925EB7EFF00EEAEBE /* ForegroundColorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336F725EB7EFF00EEAEBE /* ForegroundColorModifier.swift */; };
+		128336FC25EB7F0200EEAEBE /* BackgroundColorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336F125EB7D9600EEAEBE /* BackgroundColorModifier.swift */; };
+		1283370025EB800D00EEAEBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336FF25EB800D00EEAEBE /* AppDelegate.swift */; };
+		1283370425EB804D00EEAEBE /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283370325EB804D00EEAEBE /* AboutView.swift */; };
+		1283370B25EB874000EEAEBE /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283370325EB804D00EEAEBE /* AboutView.swift */; };
+		1283371125EB907C00EEAEBE /* DetailViewiOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1283371025EB907C00EEAEBE /* DetailViewiOS.swift */; };
+		1283371425EB914300EEAEBE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C502BF925EA062300D61772 /* DetailView.swift */; };
 		3C3E3B3725EB00EA00C8ADA9 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E3B3625EB00EA00C8ADA9 /* SearchView.swift */; };
 		3C3E3B3B25EB0A7700C8ADA9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3C3E3B3A25EB0A7700C8ADA9 /* Kingfisher */; };
 		3C3E3B3F25EB16B900C8ADA9 /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E3B3E25EB16B900C8ADA9 /* StarsView.swift */; };
@@ -24,7 +33,6 @@
 		3C65DE8A25EB64A200D541DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C914EEB25E9FBEB00FAB882 /* ContentView.swift */; };
 		3C65DE8B25EB64A200D541DF /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C65DE4025EB3E4D00D541DF /* GalleryView.swift */; };
 		3C65DE8C25EB64A200D541DF /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E3B3625EB00EA00C8ADA9 /* SearchView.swift */; };
-		3C65DE8D25EB64A200D541DF /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C502BF925EA062300D61772 /* DetailView.swift */; };
 		3C65DE8E25EB64A200D541DF /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E3B3E25EB16B900C8ADA9 /* StarsView.swift */; };
 		3C65DE8F25EB64A200D541DF /* Containers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336CC25EAB3D000EEAEBE /* Containers.swift */; };
 		3C65DE9025EB64A200D541DF /* TMDB_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128336CF25EAB42200EEAEBE /* TMDB_API.swift */; };
@@ -48,6 +56,11 @@
 		128336D325EAB67100EEAEBE /* FeaturedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCard.swift; sourceTree = "<group>"; };
 		128336D625EAB69700EEAEBE /* CategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCard.swift; sourceTree = "<group>"; };
 		128336DD25EAD43400EEAEBE /* TextFieldClearButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldClearButtonModifier.swift; sourceTree = "<group>"; };
+		128336F125EB7D9600EEAEBE /* BackgroundColorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorModifier.swift; sourceTree = "<group>"; };
+		128336F725EB7EFF00EEAEBE /* ForegroundColorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForegroundColorModifier.swift; sourceTree = "<group>"; };
+		128336FF25EB800D00EEAEBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = VidQuery/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		1283370325EB804D00EEAEBE /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		1283371025EB907C00EEAEBE /* DetailViewiOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewiOS.swift; sourceTree = "<group>"; };
 		3C3E3B3625EB00EA00C8ADA9 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		3C3E3B3E25EB16B900C8ADA9 /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
 		3C502BF925EA062300D61772 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -98,6 +111,8 @@
 		128336E025EAD43700EEAEBE /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
+				128336F125EB7D9600EEAEBE /* BackgroundColorModifier.swift */,
+				128336F725EB7EFF00EEAEBE /* ForegroundColorModifier.swift */,
 				128336DD25EAD43400EEAEBE /* TextFieldClearButtonModifier.swift */,
 				128336C525EAB39200EEAEBE /* ToolbarModifier.swift */,
 			);
@@ -108,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				3C502BF925EA062300D61772 /* DetailView.swift */,
+				1283371025EB907C00EEAEBE /* DetailViewiOS.swift */,
 				3C3E3B3E25EB16B900C8ADA9 /* StarsView.swift */,
 			);
 			path = Details;
@@ -159,6 +175,8 @@
 		3C914EE825E9FBEB00FAB882 /* VidQuery */ = {
 			isa = PBXGroup;
 			children = (
+				128336FF25EB800D00EEAEBE /* AppDelegate.swift */,
+				1283370325EB804D00EEAEBE /* AboutView.swift */,
 				3C914EE925E9FBEB00FAB882 /* VidQueryApp.swift */,
 				3C914EEB25E9FBEB00FAB882 /* ContentView.swift */,
 				3C65DE4025EB3E4D00D541DF /* GalleryView.swift */,
@@ -296,14 +314,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C65DE8925EB64A200D541DF /* VidQueryApp.swift in Sources */,
+				128336F925EB7EFF00EEAEBE /* ForegroundColorModifier.swift in Sources */,
 				3C65DE8A25EB64A200D541DF /* ContentView.swift in Sources */,
 				3C65DE8B25EB64A200D541DF /* GalleryView.swift in Sources */,
+				1283370B25EB874000EEAEBE /* AboutView.swift in Sources */,
 				3C65DE8C25EB64A200D541DF /* SearchView.swift in Sources */,
-				3C65DE8D25EB64A200D541DF /* DetailView.swift in Sources */,
 				3C65DE8E25EB64A200D541DF /* StarsView.swift in Sources */,
 				3C65DE8F25EB64A200D541DF /* Containers.swift in Sources */,
+				128336FC25EB7F0200EEAEBE /* BackgroundColorModifier.swift in Sources */,
+				1283371425EB914300EEAEBE /* DetailView.swift in Sources */,
 				3C65DE9025EB64A200D541DF /* TMDB_API.swift in Sources */,
 				3C65DE9125EB64A200D541DF /* FeaturedCard.swift in Sources */,
+				1283371125EB907C00EEAEBE /* DetailViewiOS.swift in Sources */,
 				3C65DE9225EB64A200D541DF /* CategoryCard.swift in Sources */,
 				3C65DE9325EB64A200D541DF /* TextFieldClearButtonModifier.swift in Sources */,
 				3C65DE9425EB64A200D541DF /* ToolbarModifier.swift in Sources */,
@@ -314,14 +336,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1283370425EB804D00EEAEBE /* AboutView.swift in Sources */,
 				3C3E3B3725EB00EA00C8ADA9 /* SearchView.swift in Sources */,
 				3C914EEC25E9FBEB00FAB882 /* ContentView.swift in Sources */,
 				128336D025EAB42200EEAEBE /* TMDB_API.swift in Sources */,
+				1283370025EB800D00EEAEBE /* AppDelegate.swift in Sources */,
+				128336F825EB7EFF00EEAEBE /* ForegroundColorModifier.swift in Sources */,
 				3C502BFA25EA062300D61772 /* DetailView.swift in Sources */,
 				128336DE25EAD43400EEAEBE /* TextFieldClearButtonModifier.swift in Sources */,
 				128336D725EAB69700EEAEBE /* CategoryCard.swift in Sources */,
 				3C914EEA25E9FBEB00FAB882 /* VidQueryApp.swift in Sources */,
 				3C65DE4125EB3E4D00D541DF /* GalleryView.swift in Sources */,
+				128336F225EB7D9600EEAEBE /* BackgroundColorModifier.swift in Sources */,
 				128336C625EAB39200EEAEBE /* ToolbarModifier.swift in Sources */,
 				3C3E3B3F25EB16B900C8ADA9 /* StarsView.swift in Sources */,
 				128336CD25EAB3D000EEAEBE /* Containers.swift in Sources */,

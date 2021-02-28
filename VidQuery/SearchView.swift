@@ -63,6 +63,7 @@ struct SearchView: View {
                 }
             }
         }
+        .modifier(BackgroundColorModifier())
     }
 }
 

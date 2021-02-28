@@ -21,8 +21,6 @@ struct GalleryView: View {
     ]
     
     var body: some View {
-        
-        
         ScrollView {
             VStack(alignment: .leading) {
                 HStack {
@@ -34,7 +32,8 @@ struct GalleryView: View {
                     Spacer()
                     
                     Button(action: {
-                        withAnimation(.easeOut(duration: 0.6)) {
+                        // TODO: Check duration
+                        withAnimation(.easeOut(duration: 0.4)) {
                             dismissNil = nil
                         }
                     }) {
@@ -70,22 +69,15 @@ struct GalleryView: View {
                 }
             }
             .padding(24)
-            
-            
         }
         
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(
-            Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
-                .edgesIgnoringSafeArea(.all)
-        )
+        .modifier(BackgroundColorModifier())
         .onAppear {
-            
             let api = TMDB_API()
             api.search(genre: genre, mediaType: currentView) { response in
                 searchResults = response
             }
-            
         }
     }
 }

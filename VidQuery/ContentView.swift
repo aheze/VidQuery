@@ -19,7 +19,6 @@ struct ContentView: View {
     @State var selectedResult: MediaResult?
     @State var mediaView: MediaType = .movies
     
-    
     @State var trendingMedia = [MediaResult]()
     @State var genres = [Genre]()
     
@@ -27,29 +26,45 @@ struct ContentView: View {
     @State var searchResults: [MediaResult]?
     
     @State var presentedGenre: Genre?
+    @State var showAboutSheet: Bool = false
     
     var body: some View {
-        
         VStack {
             #if os(iOS)
             if presentedGenre == nil {
-                TextField("Search...", text: $searchFieldText) { isEditing in
+                HStack(alignment: .center) {
+                    TextField("Search...", text: $searchFieldText) { _ in
                     
-                } onCommit: {
-                    print("Searching for \"\(searchFieldText)\"...")
-                    let api = TMDB_API()
-                    api.search(query: searchFieldText, mediaType: mediaView) { response in
-                        searchResults = response
+                    } onCommit: {
+                        print("Searching for \"\(searchFieldText)\"...")
+                        let api = TMDB_API()
+                        api.search(query: searchFieldText, mediaType: mediaView) { response in
+                            searchResults = response
+                        }
+                    }
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20))
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        showAboutSheet = true
+                    }) {
+                        Image(systemName: "info.circle")
+                            .font(.system(size: 24, weight: .medium))
+                            .padding(6)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .sheet(isPresented: $showAboutSheet) {
+                        AboutView(isPresented: $showAboutSheet)
                     }
                 }
-                .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20))
             }
             #endif
             
             ZStack {
                 ScrollView {
                     VStack(alignment: .leading) {
-                        
                         HStack {
                             Text("Trending")
                                 .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
@@ -78,6 +93,7 @@ struct ContentView: View {
                         }
                         
                         HStack {
+                            // TODO: Create header text view
                             Text("Genres")
                                 .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
                                 .font(.system(size: 24, weight: .medium))
@@ -86,9 +102,9 @@ struct ContentView: View {
                         
                         LazyVGrid(columns: categoryColumns, alignment: .leading, spacing: 24) {
                             ForEach(genres) { genre in
-                                
                                 Button(action: {
-                                    withAnimation(.easeOut(duration: 0.6)) {
+                                    // TODO: Check duration
+                                    withAnimation(.easeOut(duration: 0.4)) {
                                         presentedGenre = genre
                                     }
                                 }) {
@@ -97,7 +113,6 @@ struct ContentView: View {
                                 .buttonStyle(PlainButtonStyle())
                             }
                         }
-                        
                     }
                     .padding(24)
                     .sheet(item: $selectedResult) { result in
@@ -106,10 +121,7 @@ struct ContentView: View {
                 }
                 .zIndex(0)
                 
-                
                 if !searchFieldText.isEmpty {
-                    
-                    
                     #if os(macOS)
                     SearchView(searchFieldText: $searchFieldText, searchResults: $searchResults)
                         .zIndex(1)
@@ -118,7 +130,7 @@ struct ContentView: View {
                         .frame(maxHeight: .infinity)
                         .zIndex(1)
                         .background(
-                            Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+                            Color(.systemBackground)
                                 .edgesIgnoringSafeArea(.all)
                         )
                     #endif
@@ -130,13 +142,6 @@ struct ContentView: View {
                         .zIndex(2)
                 }
             }
-            
-            
-            
-            
-            
-           
-            
         }
         .onAppear(perform: {
             let api = TMDB_API()

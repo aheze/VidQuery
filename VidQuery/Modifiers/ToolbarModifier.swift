@@ -9,27 +9,16 @@ import SwiftUI
 
 struct ToolbarModifier: ViewModifier {
     @Binding var currentView: MediaType
-    
+
     @Binding var searchFieldText: String
     @Binding var searchResults: [MediaResult]?
 
     func body(content: Content) -> some View {
         content
             .toolbar {
-//                ToolbarItem {
-//                    Picker(selection: $currentView, label: Text("View")) {
-//                        Label("Movies", systemImage: "film")
-//                            .labelStyle(TitleOnlyLabelStyle())
-//                            .tag(MediaType.movies)
-//                        Label("TV Shows", systemImage: "tv")
-//                            .labelStyle(TitleOnlyLabelStyle())
-//                            .tag(MediaType.tvShows)
-//                    }
-//                    .pickerStyle(SegmentedPickerStyle())
-//                }
                 ToolbarItem {
-                    TextField("Search...", text: $searchFieldText) { isEditing in
-                        print("isEditing ??? \(isEditing)")
+                    TextField("Search...", text: $searchFieldText) { _ in
+
                     } onCommit: {
                         print("Searching for \"\(searchFieldText)\"...")
                         let api = TMDB_API()
@@ -38,11 +27,10 @@ struct ToolbarModifier: ViewModifier {
                             searchResults = response
                         }
                     }
-                        .modifier(TextFieldClearButtonModifier(text: $searchFieldText))
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .frame(minWidth: 150)
-                        .padding(.leading, 4)
-                    
+                    .modifier(TextFieldClearButtonModifier(text: $searchFieldText))
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .frame(minWidth: 150)
+                    .padding(.leading, 4)
                 }
             }
     }
