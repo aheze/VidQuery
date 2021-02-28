@@ -34,7 +34,9 @@ struct GalleryView: View {
                     Spacer()
                     
                     Button(action: {
-                        dismissNil = nil
+                        withAnimation(.easeOut(duration: 0.6)) {
+                            dismissNil = nil
+                        }
                     }) {
                         Image(systemName: "xmark")
                             .font(.system(size: 18, weight: .medium))
@@ -68,12 +70,15 @@ struct GalleryView: View {
                 }
             }
             .padding(24)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(
-                Color(.textBackgroundColor)
-            )
+            
             
         }
+        
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(
+            Color(.textBackgroundColor)
+            
+        )
         .onAppear {
             
             let api = TMDB_API()

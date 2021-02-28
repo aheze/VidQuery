@@ -75,7 +75,9 @@ struct ContentView: View {
                             ForEach(genres) { genre in
                                 
                                 Button(action: {
-                                    presentedGenre = genre
+                                    withAnimation(.easeOut(duration: 0.6)) {
+                                        presentedGenre = genre
+                                    }
                                 }) {
                                     CategoryCard(name: genre.name)
                                 }
@@ -104,6 +106,7 @@ struct ContentView: View {
             if let presentedGenre = presentedGenre {
                 GalleryView(genre: presentedGenre, dismissNil: $presentedGenre, currentView: $mediaView)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .transition(.move(edge: .top))
                     .zIndex(2)
             }
         }
