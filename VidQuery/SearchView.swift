@@ -63,7 +63,9 @@ struct SearchView: View {
                 }
             }
         }
-        .frame(minWidth: 350, maxWidth: .infinity, minHeight: 300, maxHeight: .infinity)
+        .background(
+            Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0))
+        )
     }
 }
 
