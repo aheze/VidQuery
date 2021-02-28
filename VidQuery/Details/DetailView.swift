@@ -5,30 +5,16 @@
 //  Created by Zheng on 2/26/21.
 //
 
-import SwiftUI
 import Kingfisher
+import SwiftUI
 
 struct DetailView: View {
     let result: MediaResult
     @Binding var dismissNil: MediaResult?
     
     var body: some View {
-        
         ScrollView {
             VStack {
-                
-                HStack {
-                    Spacer()
-                    
-                    Button(action: {
-                        dismissNil = nil
-                    }) {
-                        Image(systemName: "xmark")
-                            .font(.system(size: 24, weight: .medium))
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                }
-                
                 HStack(alignment: .top) {
                     KFImage.url(URL(string: "https://image.tmdb.org/t/p/w500/" + (result.type == .movies ? result.movie.posterPath ?? "/nBdoS8tjWubpEyQnqmM6tpZR3GU.jpg" : result.tv.posterPath ?? "/nBdoS8tjWubpEyQnqmM6tpZR3GU.jpg")))
                         .resizable()
@@ -38,14 +24,28 @@ struct DetailView: View {
                         .shadow(color: Color(#colorLiteral(red: 0.5723067522, green: 0.5723067522, blue: 0.5723067522, alpha: 0.5)), radius: 5, x: 0.0, y: 2)
                     
                     VStack(alignment: .leading) {
-                        Text(result.type == .movies ? result.movie.title : result.tv.name)
-                            .foregroundColor(Color(.secondaryLabelColor))
-                            .font(.system(size: 22, weight: .bold))
-                            .padding(.bottom, 6)
+                        HStack(alignment: .center) {
+                            Text("\(result.type == .movies ? result.movie.title : result.tv.name) (\((result.type == .movies ? result.movie.releaseDate : result.tv.firstAirDate).components(separatedBy: "-")[0]))")
+                                .foregroundColor(Color(.secondaryLabelColor))
+                                .font(.system(size: 22, weight: .bold))
+                                .padding(.bottom, 3)
+                        
+                            Spacer()
+                        
+                            Button(action: {
+                                dismissNil = nil
+                            }) {
+                                Image(systemName: "xmark")
+                                    .font(.system(size: 18, weight: .medium))
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                        }
+                        .padding(.bottom, 8)
                         
                         Text(result.type == .movies ? result.movie.overview : result.tv.overview)
                             .foregroundColor(Color(.secondaryLabelColor))
-                            .font(.system(size: 19, weight: .regular))
+                            .font(.system(size: 16, weight: .regular))
+                            .padding(.bottom, 8)
                         
                         StarsView(rating: CGFloat(result.type == .movies ? result.movie.voteAverage : result.tv.voteAverage), maxRating: 10)
                             .frame(height: 16)
@@ -67,67 +67,31 @@ struct DetailView: View {
                             
                             Spacer()
                         }
+                        .padding(.bottom, 8)
+                        
+                        HStack {
+                            Spacer()
+                            
+                            Button(action: {
+                                if let url = URL(string: "https://www.themoviedb.org/\(result.type.rawValue)/\(result.type == .movies ? result.movie.id : result.tv.id)") {
+                                    NSWorkspace.shared.open(url)
+                                }
+                            }) {
+                                Text("Open on TheMovieDb")
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            .padding(.vertical, 8)
+                            .padding(.horizontal, 16)
+                            .background(Color("tmdbBackgroundColor"))
+                            .foregroundColor(Color("tmdbForegroundColor"))
+                            .cornerRadius(8)
+                        }
                     }
                     .padding(.horizontal, 12)
-                    
-                    Spacer()
                 }
-                
-//                HStack {
-//                    Text("Where to Watch")
-//                        .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
-//                        .font(.system(size: 24, weight: .medium))
-//                        .padding(.top, 16)
-//
-//                    Spacer()
-//                }
-//
-//                HStack {
-//                    Text("Where to Watch")
-//                        .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
-//                        .font(.system(size: 24, weight: .medium))
-//                        .padding(.top, 16)
-//
-//                    Spacer()
-//                }
-                
-//                ScrollView(.horizontal) {
-//                    HStack {
-//                        ForEach(media.providers) { provider in
-//
-//                            Button(action: {
-//                                if let url = URL(string: provider.url) {
-//                                    NSWorkspace.shared.open(url)
-//                                }
-//                            }) {
-//                                Text(provider.name)
-//                                    .foregroundColor(.white)
-//                                    .padding(12)
-//                                    .background(
-//                                        Color(provider.color)
-//                                    )
-//                                    .cornerRadius(6)
-//                                    .shadow(color: Color(#colorLiteral(red: 0.5723067522, green: 0.5723067522, blue: 0.5723067522, alpha: 0.5)), radius: 5, x: 0.0, y: 2)
-//                            }
-//                            .buttonStyle(PlainButtonStyle())
-//                            .padding(.bottom, 12)
-//                        }
-//                    }
-//                }
-                
-//                HStack {
-//                    Text("Reviews")
-//                        .foregroundColor(Color(#colorLiteral(red: 0.6621153355, green: 0.6622314453, blue: 0.6621080041, alpha: 1)))
-//                        .font(.system(size: 24, weight: .medium))
-//                        .padding(.top, 16)
-//
-//                    Spacer()
-//                }
-                
-//                Spacer()
             }
             .padding(24)
         }
-        .frame(minWidth: 350, maxWidth: 800, minHeight: 300, maxHeight: .infinity)
+        .frame(minWidth: 350, maxWidth: 800, minHeight: 275, maxHeight: .infinity)
     }
 }

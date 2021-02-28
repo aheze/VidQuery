@@ -18,6 +18,7 @@ struct StarsView: View {
                 Image(systemName: "star.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .padding(.trailing, 2)
             }
         }
         

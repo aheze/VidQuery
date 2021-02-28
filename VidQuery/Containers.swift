@@ -94,3 +94,11 @@ public enum MediaType: String {
     case movies = "movie"
     case tvShows = "tv"
 }
+
+enum Appearance: String, Identifiable {
+    case system
+    case light
+    case dark
+
+    var id: String { self.rawValue }
+}
