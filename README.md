@@ -1,6 +1,7 @@
 # VidQuery
 ### A cross-platform app to search and discover movies
-### Powered by [The Movie Database](https://themoviedb.org)
+- Powered by [The Movie Database](https://themoviedb.org)
+- Watch on [YouTube](https://www.youtube.com/watch?v=-Yk2zYqwdH0&t=639s)
 
 <img src="https://github.com/aheze/VidQuery/blob/main/Assets/AppIcon.png?raw=true" width="200"> | <img src="https://f2.codeday.org/d5pti1xheuyu/6cFN2R4ihGOeosMuEieqs0/c1250a23400062a1c760eb54d3b75bb8/CodeDay.svg" width="200">
 --- | ---
